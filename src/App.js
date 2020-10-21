@@ -2,11 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Form from './Form';
 import Results from './Results';
-import { useHistory } from 'react-router-dom';
+
 function App() {
-  const history = useHistory();
   const handleCalculateClick = (place) => {
-    history.push('/results');
+    console.log(place.town);
   };
   return (
     <Router>
@@ -15,7 +14,7 @@ function App() {
           renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
-            <Form input={'hello'} />
+            <Form input={handleCalculateClick} />
           </Route>
           <Route exact path="/results">
             <Results />

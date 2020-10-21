@@ -4,14 +4,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-
+import { Link } from 'react-router-dom';
 function Form(input) {
   const [place, setPlace] = React.useState('');
   const [buttonDisabled, setButtonDisabled] = React.useState(true);
 
-  const handleChangeMake = ( value) => {
+  const handleChangeMake = (value) => {
     setPlace(value);
-
     setButtonDisabled(!buttonDisabled);
   };
 
@@ -23,19 +22,20 @@ function Form(input) {
         getOptionLabel={(option) => `${option.town}, ${option.country} `}
         style={{ width: 300 }}
         // onChange={handleChangeMake}
-        onChange={(event, value) =>  handleChangeMake(value)}
+        onChange={(event, value) => handleChangeMake(value)}
         renderInput={(params) => (
           <TextField {...params} label="Location" variant="outlined" />
         )}
       />
-
-      <Button
-        variant="contained"
-        disabled={buttonDisabled}
-        onClick={() => alert('hello')}
-      >
-        Calculate
-      </Button>
+      <Link to={`/results`}>
+        <Button
+          variant="contained"
+          disabled={buttonDisabled}
+          onClick={() => input.input(place)}
+        >
+          Calculate
+        </Button>
+      </Link>
       {place.town}
     </div>
   );
