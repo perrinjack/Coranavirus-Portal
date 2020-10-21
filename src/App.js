@@ -21,7 +21,8 @@ function App() {
   const classes = useStyles();
   const [make, setMake] = React.useState('');
   const databaseMakes = ['Audi', 'BMW', 'Tesla'];
-
+  const [model, setModel] = React.useState('');
+  const [modelList, setModelList] = React.useState(['hello', 'jack', 'one']);
   const handleChange = (event) => {
     setMake(event.target.value);
   };
@@ -38,6 +39,20 @@ function App() {
           label="Car Make"
         >
           {databaseMakes.map((x) => (
+            <MenuItem value={x}>{x}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+
+      <FormControl variant="outlined" className={classes.formControl}>
+        <InputLabel id="demo-simple-select-outlined-label">Model</InputLabel>
+        <Select
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          value={model}
+          label="Car Model"
+        >
+          {modelList.map((x) => (
             <MenuItem value={x}>{x}</MenuItem>
           ))}
         </Select>
