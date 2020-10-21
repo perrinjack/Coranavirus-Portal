@@ -20,11 +20,23 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [make, setMake] = React.useState('');
-  const databaseMakes = ['Audi', 'BMW', 'Tesla'];
   const [model, setModel] = React.useState('');
-  const [modelList, setModelList] = React.useState(['hello', 'jack', 'one']);
-  const handleChange = (event) => {
+  const [modelList, setModelList] = React.useState([]);
+
+  const databaseMakes = ['Audi', 'BMW', 'Tesla'];
+  const databaseModels = {
+    Audi: ['TT', 'Q'],
+    BMW: ['BM', '1 Series'],
+    Tesla: ['Model X'],
+  };
+
+  const handleChangeMake = (event) => {
     setMake(event.target.value);
+    setModelList(databaseModels[event.target.value]);
+  };
+
+  const handleChangeModel = (event) => {
+    setModel(event.target.value);
   };
 
   return (
@@ -35,7 +47,7 @@ function App() {
           labelId="demo-simple-select-outlined-label"
           id="demo-simple-select-outlined"
           value={make}
-          onChange={handleChange}
+          onChange={handleChangeMake}
           label="Car Make"
         >
           {databaseMakes.map((x) => (
@@ -50,6 +62,7 @@ function App() {
           labelId="demo-simple-select-outlined-label"
           id="demo-simple-select-outlined"
           value={model}
+          onChange={handleChangeModel}
           label="Car Model"
         >
           {modelList.map((x) => (
