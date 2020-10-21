@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Form from './Form';
-
+import Results from './Results';
 function App() {
   return (
     <Router>
@@ -11,6 +11,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Form />
+          </Route>
+          <Route exact path="/results">
+            <Results />
           </Route>
           <Route path="/">
             <h1>Custom 404 Page</h1>
