@@ -56,7 +56,17 @@ class Results extends React.Component {
   }
 
   render() {
-  return <div>{this.state.nationwideNewCasesToday} {this.state.localNewCasesToday}</div>;
+    return (
+      <div>
+        <h1>Today at a glance</h1>
+        <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
+        <p>
+          New Cases in St Albans Local Authority:{' '}
+          {this.state.localNewCasesToday}
+        </p>
+        <h1>Last Week at a glance</h1>
+      </div>
+    );
   }
 }
 
