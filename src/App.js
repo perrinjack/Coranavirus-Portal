@@ -1,19 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 160,
+    color: 'red',
   },
   selectEmpty: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(6),
   },
 }));
 
@@ -23,10 +24,13 @@ function App() {
   const [model, setModel] = React.useState('');
   const [modelList, setModelList] = React.useState([]);
   const [engine, setEngine] = React.useState('');
+  const [engineDisabled, setEngineDisabled] = React.useState(true);
+  const [modelDisabled, setModelDisabled] = React.useState(true);
+  const [buttonDisabled, setButtonDisabled] = React.useState(true);
   const databaseMakes = ['Audi', 'BMW', 'Tesla'];
   const databaseModels = {
     Audi: ['TT', 'Q'],
-    BMW: ['BM', '1 Series'],
+    BMW: ['2 series', '3 Series', '4 series', '1 Series'],
     Tesla: ['Model X'],
   };
   const engineList = ['2.0'];
@@ -36,15 +40,20 @@ function App() {
     setModelList(databaseModels[event.target.value]);
     setModel('');
     setEngine('');
+    setModelDisabled(false);
+    setEngineDisabled(true);
+    setButtonDisabled(true);
   };
 
   const handleChangeModel = (event) => {
     setModel(event.target.value);
     setEngine('');
+    setEngineDisabled(false);
   };
 
   const handleChangeEngine = (event) => {
     setEngine(event.target.value);
+    setButtonDisabled(false);
   };
 
   return (
@@ -72,8 +81,9 @@ function App() {
           value={model}
           onChange={handleChangeModel}
           label="Car Model"
+          disabled={modelDisabled}
         >
-          {make == '' ? (
+          {make === '' ? (
             <MenuItem>Select Make</MenuItem>
           ) : (
             modelList.map((x) => <MenuItem value={x}>{x}</MenuItem>)
@@ -89,12 +99,16 @@ function App() {
           value={engine}
           onChange={handleChangeEngine}
           label="Engine"
+          disabled={engineDisabled}
         >
           {engineList.map((x) => (
             <MenuItem value={x}>{x}</MenuItem>
           ))}
         </Select>
       </FormControl>
+      <Button variant="contained" disabled={buttonDisabled}>
+        Calculate
+      </Button>
     </div>
   );
 }
