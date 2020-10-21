@@ -22,21 +22,29 @@ function App() {
   const [make, setMake] = React.useState('');
   const [model, setModel] = React.useState('');
   const [modelList, setModelList] = React.useState([]);
-
+  const [engine, setEngine] = React.useState('');
   const databaseMakes = ['Audi', 'BMW', 'Tesla'];
   const databaseModels = {
     Audi: ['TT', 'Q'],
     BMW: ['BM', '1 Series'],
     Tesla: ['Model X'],
   };
+  const engineList = ['2.0'];
 
   const handleChangeMake = (event) => {
     setMake(event.target.value);
     setModelList(databaseModels[event.target.value]);
+    setModel('');
+    setEngine('');
   };
 
   const handleChangeModel = (event) => {
     setModel(event.target.value);
+    setEngine('');
+  };
+
+  const handleChangeEngine = (event) => {
+    setEngine(event.target.value);
   };
 
   return (
@@ -66,6 +74,21 @@ function App() {
           label="Car Model"
         >
           {modelList.map((x) => (
+            <MenuItem value={x}>{x}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+
+      <FormControl variant="outlined" className={classes.formControl}>
+        <InputLabel id="demo-simple-select-outlined-label">Engine</InputLabel>
+        <Select
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          value={engine}
+          onChange={handleChangeEngine}
+          label="Car Model"
+        >
+          {engineList.map((x) => (
             <MenuItem value={x}>{x}</MenuItem>
           ))}
         </Select>
