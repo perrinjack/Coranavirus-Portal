@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [make, setMake] = React.useState('');
-  const [model, setModel] = React.useState(' ');
+  const [model, setModel] = React.useState('');
   const [modelList, setModelList] = React.useState([]);
   const [engine, setEngine] = React.useState('');
   const databaseMakes = ['Audi', 'BMW', 'Tesla'];
