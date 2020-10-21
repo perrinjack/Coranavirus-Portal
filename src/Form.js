@@ -4,21 +4,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { useHistory } from 'react-router-dom';
 
-function Form() {
-  const history = useHistory();
-
+function Form(input) {
   const [place, setPlace] = React.useState('');
   const [buttonDisabled, setButtonDisabled] = React.useState(true);
 
-  const handleChangeMake = (event) => {
-    setPlace(event.target.value);
-    setButtonDisabled(!buttonDisabled);
-  };
+  const handleChangeMake = ( value) => {
+    setPlace(value);
 
-  const handleCalculateClick = () => {
-    history.push('/results');
+    setButtonDisabled(!buttonDisabled);
   };
 
   return (
@@ -28,7 +22,8 @@ function Form() {
         options={locations}
         getOptionLabel={(option) => `${option.town}, ${option.country} `}
         style={{ width: 300 }}
-        onChange={handleChangeMake}
+        // onChange={handleChangeMake}
+        onChange={(event, value) =>  handleChangeMake(value)}
         renderInput={(params) => (
           <TextField {...params} label="Location" variant="outlined" />
         )}
@@ -37,10 +32,11 @@ function Form() {
       <Button
         variant="contained"
         disabled={buttonDisabled}
-        onClick={handleCalculateClick}
+        onClick={() => alert('hello')}
       >
         Calculate
       </Button>
+      {place.town}
     </div>
   );
 }
@@ -48,6 +44,9 @@ function Form() {
 const locations = [
   { town: 'St Albans', country: 'England' },
   { town: 'Harpenden', country: 'England' },
+  { town: 'Luton', country: 'England' },
+  { town: 'Bristol', country: 'England' },
+  { town: 'Battersea', country: 'England' },
 ];
 
 export default Form;
