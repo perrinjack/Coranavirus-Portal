@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [make, setMake] = React.useState('');
-  const [model, setModel] = React.useState('');
+  const [model, setModel] = React.useState(' ');
   const [modelList, setModelList] = React.useState([]);
   const [engine, setEngine] = React.useState('');
   const databaseMakes = ['Audi', 'BMW', 'Tesla'];
@@ -73,9 +73,11 @@ function App() {
           onChange={handleChangeModel}
           label="Car Model"
         >
-          {modelList.map((x) => (
-            <MenuItem value={x}>{x}</MenuItem>
-          ))}
+          {make == '' ? (
+            <MenuItem>Select Make</MenuItem>
+          ) : (
+            modelList.map((x) => <MenuItem value={x}>{x}</MenuItem>)
+          )}
         </Select>
       </FormControl>
 
@@ -86,7 +88,7 @@ function App() {
           id="demo-simple-select-outlined"
           value={engine}
           onChange={handleChangeEngine}
-          label="Car Model"
+          label="Engine"
         >
           {engineList.map((x) => (
             <MenuItem value={x}>{x}</MenuItem>
