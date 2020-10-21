@@ -17,7 +17,7 @@ function App() {
             <Form input={handleCalculateClick} />
           </Route>
           <Route exact path="/results">
-            <Results />
+            <Results search= {"Harpenden"} />
           </Route>
           <Route path="/">
             <h1>Custom 404 Page</h1>
