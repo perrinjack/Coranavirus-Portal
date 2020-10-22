@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 function App() {
   const handleCalculateClick = (place) => {
-    console.log(place.town);
+    alert(place.town);
   };
   return (
     <Router>
@@ -24,7 +24,7 @@ function App() {
             <Form input={handleCalculateClick} />
           </Route>
           <Route exact path="/results">
-            <Results search={'Harpenden'} />
+            <Results location={'Harpenden'} />
           </Route>
           <Route path="/">
             <h1>Custom 404 Page</h1>

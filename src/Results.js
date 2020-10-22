@@ -34,10 +34,11 @@ const endpoint1 =
 
 class Results extends React.Component {
   constructor(props) {
-    super(); // or super(props) ?
+    super(props); // or super(props) ?
     this.state = {
       nationwideNewCasesToday: '',
       localNewCasesToday: '',
+      location: this.props.location,
     };
   }
 
@@ -77,10 +78,9 @@ class Results extends React.Component {
   render() {
     return (
       <div>
-        
-        <Container maxWidth="md" >
+        <Container maxWidth="md">
           <Grid container spacing={2} justify="center">
-            <Grid item xs={'auto'} sm={4} align="center" >
+            <Grid item xs={'auto'} sm={4} align="center">
               <h2>Overview of the U.K</h2>
               <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
               <p>Number of Deaths: {this.state.nationwideNewCasesToday}</p>
@@ -89,7 +89,8 @@ class Results extends React.Component {
             <Grid item xs={'auto'} sm={4} align="center">
               <h2> St Albans Today</h2>
               <p>
-                New Cases in St Albans: {this.state.localNewCasesToday}
+                New Cases in {this.state.location}:{' '}
+                {this.state.localNewCasesToday}
               </p>
             </Grid>
             <Grid item xs={'auto'} sm={4} align="center">
