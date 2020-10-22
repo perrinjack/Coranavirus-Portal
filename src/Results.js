@@ -4,9 +4,7 @@ import Container from '@material-ui/core/Container';
 import axios from 'axios';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import Table from '@material-ui/core/Table';
@@ -79,11 +77,7 @@ class Results extends React.Component {
   render() {
     return (
       <div>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="h6">Home</Typography>
-          </Toolbar>
-        </AppBar>
+        
         <Container maxWidth="md" >
           <Grid container spacing={2} justify="center">
             <Grid item xs={'auto'} sm={4} align="center" >
