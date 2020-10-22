@@ -9,7 +9,21 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
+function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
+const rows = [
+  createData('Slough', 159),
+  createData('St Albans', 237),
+  createData('Harpenden', 262),
+];
 const endpoint =
   'https://api.coronavirus.data.gov.uk/v1/data?' +
   'filters=areaType=nation;areaName=england&' +
@@ -71,7 +85,7 @@ class Results extends React.Component {
           </Toolbar>
         </AppBar>
         <Container maxWidth="md" >
-          <Grid container spacing={2}  >
+          <Grid container spacing={2} justify="center">
             <Grid item xs={'auto'} sm={4} align="center" >
               <h2>Overview of the U.K</h2>
               <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
@@ -80,27 +94,32 @@ class Results extends React.Component {
 
             <Grid item xs={'auto'} sm={4} align="center">
               <h2> St Albans Today</h2>
-              <p>New Cases in St Albans: {this.state.nationwideNewCasesToday}</p>
+              <p>
+                New Cases in St Albans: {this.state.localNewCasesToday}
+              </p>
             </Grid>
             <Grid item xs={'auto'} sm={4} align="center">
               <h2>Tier 3 Zones</h2>
-              <p>New Cases in St Albans: {this.state.nationwideNewCasesToday}</p>
+              <Table size="small" aria-label="a dense table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Area</TableCell>
+                    <TableCell align="right">Calories</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row) => (
+                    <TableRow key={row.name}>
+                      <TableCell component="th" scope="row">
+                        {row.name}
+                      </TableCell>
+                      <TableCell align="right">{row.calories}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </Grid>
-            
           </Grid>
-          <Grid container spacing={2} align="center">
-            <Grid item xs={'auto'} sm={6}>
-              <h2>Tier 3 Zones</h2>
-              <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
-            </Grid>
-
-            <Grid item xs={'auto'} sm={6} align="center">
-              <h2>The Last week in St Albans</h2>
-              <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
-            </Grid>
-            
-          </Grid>
-          
         </Container>
       </div>
     );
