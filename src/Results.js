@@ -2,6 +2,13 @@ import React from 'react';
 import './App.css';
 import Container from '@material-ui/core/Container';
 import axios from 'axios';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 
 const endpoint =
   'https://api.coronavirus.data.gov.uk/v1/data?' +
@@ -58,14 +65,42 @@ class Results extends React.Component {
   render() {
     return (
       <div>
-        <Container maxWidth="sm" align = "center" justify = "center">
-          <h1>Today at a glance</h1>
-          <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
-          <p>
-            New Cases in St Albans Local Authority:{' '}
-            {this.state.localNewCasesToday}
-          </p>
-          <h1>Last Week at a glance</h1>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6">Home</Typography>
+          </Toolbar>
+        </AppBar>
+        <Container maxWidth="md" >
+          <Grid container spacing={2}  >
+            <Grid item xs={'auto'} sm={4} align="center" >
+              <h2>Overview of the U.K</h2>
+              <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
+              <p>Number of Deaths: {this.state.nationwideNewCasesToday}</p>
+            </Grid>
+
+            <Grid item xs={'auto'} sm={4} align="center">
+              <h2> St Albans Today</h2>
+              <p>New Cases in St Albans: {this.state.nationwideNewCasesToday}</p>
+            </Grid>
+            <Grid item xs={'auto'} sm={4} align="center">
+              <h2>Tier 3 Zones</h2>
+              <p>New Cases in St Albans: {this.state.nationwideNewCasesToday}</p>
+            </Grid>
+            
+          </Grid>
+          <Grid container spacing={2} align="center">
+            <Grid item xs={'auto'} sm={6}>
+              <h2>Tier 3 Zones</h2>
+              <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
+            </Grid>
+
+            <Grid item xs={'auto'} sm={6} align="center">
+              <h2>The Last week in St Albans</h2>
+              <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
+            </Grid>
+            
+          </Grid>
+          
         </Container>
       </div>
     );
