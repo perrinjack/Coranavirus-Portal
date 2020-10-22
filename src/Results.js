@@ -87,7 +87,7 @@ class Results extends React.Component {
             </Grid>
 
             <Grid item xs={'auto'} sm={4} align="center">
-              <h2> St Albans Today</h2>
+              <h2> {this.state.location} Today</h2>
               <p>
                 New Cases in {this.state.location}:{' '}
                 {this.state.localNewCasesToday}

@@ -70,8 +70,10 @@ function Form(input) {
             <Button
               type="submit"
               fullWidth
+
               variant="contained"
               color="primary"
+              onClick={() => input.input(place)}
               className={classes.submit}
               disabled={buttonDisabled}
               component={Link}
