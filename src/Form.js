@@ -36,7 +36,6 @@ function Form(input) {
           Calculate
         </Button>
       </Link>
-      {place.town}
     </div>
   );
 }

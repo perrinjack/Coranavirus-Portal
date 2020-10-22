@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-
+import Container from '@material-ui/core/Container';
 import axios from 'axios';
 
 const endpoint =
@@ -58,13 +58,15 @@ class Results extends React.Component {
   render() {
     return (
       <div>
-        <h1>Today at a glance</h1>
-        <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
-        <p>
-          New Cases in St Albans Local Authority:{' '}
-          {this.state.localNewCasesToday}
-        </p>
-        <h1>Last Week at a glance</h1>
+        <Container maxWidth="sm" align = "center" justify = "center">
+          <h1>Today at a glance</h1>
+          <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
+          <p>
+            New Cases in St Albans Local Authority:{' '}
+            {this.state.localNewCasesToday}
+          </p>
+          <h1>Last Week at a glance</h1>
+        </Container>
       </div>
     );
   }
