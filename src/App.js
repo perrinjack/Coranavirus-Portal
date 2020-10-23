@@ -6,6 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 function App() {
   const handleCalculateClick = (place) => {
     setLocation(place.town);
@@ -18,8 +19,7 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
         <AppBar position="static">
-          <Toolbar component={Link}
-              to="/">
+          <Toolbar component={Link} to="/">
             <Typography variant="h6">Home</Typography>
           </Toolbar>
         </AppBar>
@@ -28,7 +28,11 @@ function App() {
             <Form input={handleCalculateClick} />
           </Route>
           <Route exact path="/results">
-            <Results location={location} />
+            {location === '' ? (
+              <Redirect to="/" />
+            ) : (
+              <Results location={location} />
+            )}
           </Route>
           <Route path="/">
             <h1>Custom 404 Page</h1>
