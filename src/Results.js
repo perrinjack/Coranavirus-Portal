@@ -29,7 +29,7 @@ const endpoint =
 
 const endpoint1 =
   'https://api.coronavirus.data.gov.uk/v1/data?' +
-  'filters=areaType=ltla;areaName=st albans&' +
+  'filters=areaType=ltla;areaName=sutton&' +
   'structure={"date":"date","newCases":"newCasesByPublishDate"}';
 
 class Results extends React.Component {
