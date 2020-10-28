@@ -1,20 +1,14 @@
 import React from 'react';
 import './App.css';
+import locals from './locals.json';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
-import Avatar from '@material-ui/core/Avatar';
-
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-
-import Box from '@material-ui/core/Box';
 
 import Typography from '@material-ui/core/Typography';
 
@@ -25,6 +19,7 @@ function Form(input) {
   const handleChangeMake = (value) => {
     setPlace(value);
     setButtonDisabled(!buttonDisabled);
+    console.log(locals.local_authorities);
   };
 
   const useStyles = makeStyles((theme) => ({
@@ -60,7 +55,7 @@ function Form(input) {
             <Autocomplete
               id="combo-box-demo"
               options={locations}
-              getOptionLabel={(option) => `${option.town}, ${option.country} `}
+              getOptionLabel={(option) => `${option.Town} `}
               onChange={(event, value) => handleChangeMake(value)}
               renderInput={(params) => (
                 <TextField {...params} label="Location" variant="outlined" />
@@ -87,12 +82,6 @@ function Form(input) {
   );
 }
 
-const locations = [
-  { town: 'St Albans', country: 'England' },
-  { town: 'Halton', country: 'England' },
-  { town: 'Warrington', country: 'England' },
-  { town: 'Hartlepool', country: 'England' },
-  { town: 'Blackpool', country: 'England' },
-];
+const locations = locals.local_authorities;
 
 export default Form;

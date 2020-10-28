@@ -1,0 +1,1177 @@
+{
+  "local_authorities": [
+    {
+      "Town": "Hartlepool"
+    },
+    {
+      "Town": "Middlesbrough"
+    },
+    {
+      "Town": "Redcar and Cleveland"
+    },
+    {
+      "Town": "Stockton-on-Tees"
+    },
+    {
+      "Town": "Darlington"
+    },
+    {
+      "Town": "Halton"
+    },
+    {
+      "Town": "Warrington"
+    },
+    {
+      "Town": "Blackburn with Darwen"
+    },
+    {
+      "Town": "Blackpool"
+    },
+    {
+      "Town": "Kingston upon Hull, City of"
+    },
+    {
+      "Town": "East Riding of Yorkshire"
+    },
+    {
+      "Town": "North East Lincolnshire"
+    },
+    {
+      "Town": "North Lincolnshire"
+    },
+    {
+      "Town": "York"
+    },
+    {
+      "Town": "Derby"
+    },
+    {
+      "Town": "Leicester"
+    },
+    {
+      "Town": "Rutland"
+    },
+    {
+      "Town": "Nottingham"
+    },
+    {
+      "Town": "Herefordshire, County of"
+    },
+    {
+      "Town": "Telford and Wrekin"
+    },
+    {
+      "Town": "Stoke-on-Trent"
+    },
+    {
+      "Town": "Bath and North East Somerset"
+    },
+    {
+      "Town": "Bristol, City of"
+    },
+    {
+      "Town": "North Somerset"
+    },
+    {
+      "Town": "South Gloucestershire"
+    },
+    {
+      "Town": "Plymouth"
+    },
+    {
+      "Town": "Torbay"
+    },
+    {
+      "Town": "Bournemouth"
+    },
+    {
+      "Town": "Poole"
+    },
+    {
+      "Town": "Swindon"
+    },
+    {
+      "Town": "Peterborough"
+    },
+    {
+      "Town": "Luton"
+    },
+    {
+      "Town": "Southend-on-Sea"
+    },
+    {
+      "Town": "Thurrock"
+    },
+    {
+      "Town": "Medway"
+    },
+    {
+      "Town": "Bracknell Forest"
+    },
+    {
+      "Town": "West Berkshire"
+    },
+    {
+      "Town": "Reading"
+    },
+    {
+      "Town": "Slough"
+    },
+    {
+      "Town": "Windsor and Maidenhead"
+    },
+    {
+      "Town": "Wokingham"
+    },
+    {
+      "Town": "Milton Keynes"
+    },
+    {
+      "Town": "Brighton and Hove"
+    },
+    {
+      "Town": "Portsmouth"
+    },
+    {
+      "Town": "Southampton"
+    },
+    {
+      "Town": "Isle of Wight"
+    },
+    {
+      "Town": "County Durham"
+    },
+    {
+      "Town": "Cheshire East"
+    },
+    {
+      "Town": "Cheshire West and Chester"
+    },
+    {
+      "Town": "Shropshire"
+    },
+    {
+      "Town": "Cornwall"
+    },
+    {
+      "Town": "Isles of Scilly"
+    },
+    {
+      "Town": "Wiltshire"
+    },
+    {
+      "Town": "Bedford"
+    },
+    {
+      "Town": "Central Bedfordshire"
+    },
+    {
+      "Town": "Northumberland"
+    },
+    {
+      "Town": "Aylesbury Vale"
+    },
+    {
+      "Town": "Chiltern"
+    },
+    {
+      "Town": "South Bucks"
+    },
+    {
+      "Town": "Wycombe"
+    },
+    {
+      "Town": "Cambridge"
+    },
+    {
+      "Town": "East Cambridgeshire"
+    },
+    {
+      "Town": "Fenland"
+    },
+    {
+      "Town": "Huntingdonshire"
+    },
+    {
+      "Town": "South Cambridgeshire"
+    },
+    {
+      "Town": "Allerdale"
+    },
+    {
+      "Town": "Barrow-in-Furness"
+    },
+    {
+      "Town": "Carlisle"
+    },
+    {
+      "Town": "Copeland"
+    },
+    {
+      "Town": "Eden"
+    },
+    {
+      "Town": "South Lakeland"
+    },
+    {
+      "Town": "Amber Valley"
+    },
+    {
+      "Town": "Bolsover"
+    },
+    {
+      "Town": "Chesterfield"
+    },
+    {
+      "Town": "Derbyshire Dales"
+    },
+    {
+      "Town": "Erewash"
+    },
+    {
+      "Town": "High Peak"
+    },
+    {
+      "Town": "North East Derbyshire"
+    },
+    {
+      "Town": "South Derbyshire"
+    },
+    {
+      "Town": "East Devon"
+    },
+    {
+      "Town": "Exeter"
+    },
+    {
+      "Town": "Mid Devon"
+    },
+    {
+      "Town": "North Devon"
+    },
+    {
+      "Town": "South Hams"
+    },
+    {
+      "Town": "Teignbridge"
+    },
+    {
+      "Town": "Torridge"
+    },
+    {
+      "Town": "West Devon"
+    },
+    {
+      "Town": "Christchurch"
+    },
+    {
+      "Town": "East Dorset"
+    },
+    {
+      "Town": "North Dorset"
+    },
+    {
+      "Town": "Purbeck"
+    },
+    {
+      "Town": "West Dorset"
+    },
+    {
+      "Town": "Weymouth and Portland"
+    },
+    {
+      "Town": "Eastbourne"
+    },
+    {
+      "Town": "Hastings"
+    },
+    {
+      "Town": "Lewes"
+    },
+    {
+      "Town": "Rother"
+    },
+    {
+      "Town": "Wealden"
+    },
+    {
+      "Town": "Basildon"
+    },
+    {
+      "Town": "Braintree"
+    },
+    {
+      "Town": "Brentwood"
+    },
+    {
+      "Town": "Castle Point"
+    },
+    {
+      "Town": "Chelmsford"
+    },
+    {
+      "Town": "Colchester"
+    },
+    {
+      "Town": "Epping Forest"
+    },
+    {
+      "Town": "Harlow"
+    },
+    {
+      "Town": "Maldon"
+    },
+    {
+      "Town": "Rochford"
+    },
+    {
+      "Town": "Tendring"
+    },
+    {
+      "Town": "Uttlesford"
+    },
+    {
+      "Town": "Cheltenham"
+    },
+    {
+      "Town": "Cotswold"
+    },
+    {
+      "Town": "North Down and Ards"
+    },
+    {
+      "Town": "Clackmannanshire"
+    },
+    {
+      "Town": "Dumfries and Galloway"
+    },
+    {
+      "Town": "East Ayrshire"
+    },
+    {
+      "Town": "East Lothian"
+    },
+    {
+      "Town": "East Renfrewshire"
+    },
+    {
+      "Town": "Comhairle nan Eilean Siar"
+    },
+    {
+      "Town": "Falkirk"
+    },
+    {
+      "Town": "Fife"
+    },
+    {
+      "Town": "Highland"
+    },
+    {
+      "Town": "Inverclyde"
+    },
+    {
+      "Town": "Midlothian"
+    },
+    {
+      "Town": "Moray"
+    },
+    {
+      "Town": "North Ayrshire"
+    },
+    {
+      "Town": "Orkney Islands"
+    },
+    {
+      "Town": "Perth and Kinross"
+    },
+    {
+      "Town": "Scottish Borders"
+    },
+    {
+      "Town": "Shetland Islands"
+    },
+    {
+      "Town": "South Ayrshire"
+    },
+    {
+      "Town": "South Lanarkshire"
+    },
+    {
+      "Town": "Stirling"
+    },
+    {
+      "Town": "Aberdeen City"
+    },
+    {
+      "Town": "Aberdeenshire"
+    },
+    {
+      "Town": "Argyll and Bute"
+    },
+    {
+      "Town": "City of Edinburgh"
+    },
+    {
+      "Town": "Renfrewshire"
+    },
+    {
+      "Town": "West Dunbartonshire"
+    },
+    {
+      "Town": "West Lothian"
+    },
+    {
+      "Town": "Angus"
+    },
+    {
+      "Town": "Dundee City"
+    },
+    {
+      "Town": "North Lanarkshire"
+    },
+    {
+      "Town": "East Dunbartonshire"
+    },
+    {
+      "Town": "Glasgow City"
+    },
+    {
+      "Town": "Isle of Anglesey"
+    },
+    {
+      "Town": "Gwynedd"
+    },
+    {
+      "Town": "Conwy"
+    },
+    {
+      "Town": "Denbighshire"
+    },
+    {
+      "Town": "Flintshire"
+    },
+    {
+      "Town": "Wrexham"
+    },
+    {
+      "Town": "Ceredigion"
+    },
+    {
+      "Town": "Pembrokeshire"
+    },
+    {
+      "Town": "Carmarthenshire"
+    },
+    {
+      "Town": "Swansea"
+    },
+    {
+      "Town": "Neath Port Talbot"
+    },
+    {
+      "Town": "Bridgend"
+    },
+    {
+      "Town": "Vale of Glamorgan"
+    },
+    {
+      "Town": "Cardiff"
+    },
+    {
+      "Town": "Rhondda Cynon Taf"
+    },
+    {
+      "Town": "Caerphilly"
+    },
+    {
+      "Town": "Blaenau Gwent"
+    },
+    {
+      "Town": "Torfaen"
+    },
+    {
+      "Town": "Monmouthshire"
+    },
+    {
+      "Town": "Newport"
+    },
+    {
+      "Town": "Powys"
+    },
+    {
+      "Town": "Merthyr Tydfil"
+    },
+    {
+      "Town": "Forest of Dean"
+    },
+    {
+      "Town": "Gloucester"
+    },
+    {
+      "Town": "Stroud"
+    },
+    {
+      "Town": "Tewkesbury"
+    },
+    {
+      "Town": "Basingstoke and Deane"
+    },
+    {
+      "Town": "East Hampshire"
+    },
+    {
+      "Town": "Eastleigh"
+    },
+    {
+      "Town": "Fareham"
+    },
+    {
+      "Town": "Gosport"
+    },
+    {
+      "Town": "Hart"
+    },
+    {
+      "Town": "Havant"
+    },
+    {
+      "Town": "New Forest"
+    },
+    {
+      "Town": "Rushmoor"
+    },
+    {
+      "Town": "Test Valley"
+    },
+    {
+      "Town": "Winchester"
+    },
+    {
+      "Town": "Broxbourne"
+    },
+    {
+      "Town": "Dacorum"
+    },
+    {
+      "Town": "Hertsmere"
+    },
+    {
+      "Town": "North Hertfordshire"
+    },
+    {
+      "Town": "Three Rivers"
+    },
+    {
+      "Town": "Watford"
+    },
+    {
+      "Town": "Ashford"
+    },
+    {
+      "Town": "Canterbury"
+    },
+    {
+      "Town": "Dartford"
+    },
+    {
+      "Town": "Dover"
+    },
+    {
+      "Town": "Gravesham"
+    },
+    {
+      "Town": "Maidstone"
+    },
+    {
+      "Town": "Sevenoaks"
+    },
+    {
+      "Town": "Shepway"
+    },
+    {
+      "Town": "Swale"
+    },
+    {
+      "Town": "Thanet"
+    },
+    {
+      "Town": "Tonbridge and Malling"
+    },
+    {
+      "Town": "Tunbridge Wells"
+    },
+    {
+      "Town": "Burnley"
+    },
+    {
+      "Town": "Chorley"
+    },
+    {
+      "Town": "Fylde"
+    },
+    {
+      "Town": "Hyndburn"
+    },
+    {
+      "Town": "Lancaster"
+    },
+    {
+      "Town": "Pendle"
+    },
+    {
+      "Town": "Preston"
+    },
+    {
+      "Town": "Ribble Valley"
+    },
+    {
+      "Town": "Rossendale"
+    },
+    {
+      "Town": "South Ribble"
+    },
+    {
+      "Town": "West Lancashire"
+    },
+    {
+      "Town": "Wyre"
+    },
+    {
+      "Town": "Blaby"
+    },
+    {
+      "Town": "Charnwood"
+    },
+    {
+      "Town": "Harborough"
+    },
+    {
+      "Town": "Hinckley and Bosworth"
+    },
+    {
+      "Town": "Melton"
+    },
+    {
+      "Town": "North West Leicestershire"
+    },
+    {
+      "Town": "Oadby and Wigston"
+    },
+    {
+      "Town": "Elmbridge"
+    },
+    {
+      "Town": "South Holland"
+    },
+    {
+      "Town": "Boston"
+    },
+    {
+      "Town": "East Lindsey"
+    },
+    {
+      "Town": "Lincoln"
+    },
+    {
+      "Town": "North Kesteven"
+    },
+    {
+      "Town": "Epsom and Ewell"
+    },
+    {
+      "Town": "Guildford"
+    },
+    {
+      "Town": "Mole Valley"
+    },
+    {
+      "Town": "Reigate and Banstead"
+    },
+    {
+      "Town": "Runnymede"
+    },
+    {
+      "Town": "Spelthorne"
+    },
+    {
+      "Town": "Surrey Heath"
+    },
+    {
+      "Town": "Tandridge"
+    },
+    {
+      "Town": "Waverley"
+    },
+    {
+      "Town": "Woking"
+    },
+    {
+      "Town": "North Warwickshire"
+    },
+    {
+      "Town": "Nuneaton and Bedworth"
+    },
+    {
+      "Town": "Rugby"
+    },
+    {
+      "Town": "Stratford-on-Avon"
+    },
+    {
+      "Town": "Warwick"
+    },
+    {
+      "Town": "Adur"
+    },
+    {
+      "Town": "Arun"
+    },
+    {
+      "Town": "Chichester"
+    },
+    {
+      "Town": "Crawley"
+    },
+    {
+      "Town": "Horsham"
+    },
+    {
+      "Town": "Mid Sussex"
+    },
+    {
+      "Town": "Worthing"
+    },
+    {
+      "Town": "Bromsgrove"
+    },
+    {
+      "Town": "Malvern Hills"
+    },
+    {
+      "Town": "Redditch"
+    },
+    {
+      "Town": "Worcester"
+    },
+    {
+      "Town": "Wychavon"
+    },
+    {
+      "Town": "Wyre Forest"
+    },
+    {
+      "Town": "St Albans"
+    },
+    {
+      "Town": "Welwyn Hatfield"
+    },
+    {
+      "Town": "East Hertfordshire"
+    },
+    {
+      "Town": "Stevenage"
+    },
+    {
+      "Town": "Bolton"
+    },
+    {
+      "Town": "Bury"
+    },
+    {
+      "Town": "Manchester"
+    },
+    {
+      "Town": "Oldham"
+    },
+    {
+      "Town": "Rochdale"
+    },
+    {
+      "Town": "Salford"
+    },
+    {
+      "Town": "Stockport"
+    },
+    {
+      "Town": "Tameside"
+    },
+    {
+      "Town": "Trafford"
+    },
+    {
+      "Town": "Wigan"
+    },
+    {
+      "Town": "Knowsley"
+    },
+    {
+      "Town": "Liverpool"
+    },
+    {
+      "Town": "St. Helens"
+    },
+    {
+      "Town": "Sefton"
+    },
+    {
+      "Town": "Wirral"
+    },
+    {
+      "Town": "Barnsley"
+    },
+    {
+      "Town": "Doncaster"
+    },
+    {
+      "Town": "Rotherham"
+    },
+    {
+      "Town": "Sheffield"
+    },
+    {
+      "Town": "Newcastle upon Tyne"
+    },
+    {
+      "Town": "North Tyneside"
+    },
+    {
+      "Town": "South Tyneside"
+    },
+    {
+      "Town": "Sunderland"
+    },
+    {
+      "Town": "South Kesteven"
+    },
+    {
+      "Town": "West Lindsey"
+    },
+    {
+      "Town": "Breckland"
+    },
+    {
+      "Town": "Broadland"
+    },
+    {
+      "Town": "Great Yarmouth"
+    },
+    {
+      "Town": "King's Lynn and West Norfolk"
+    },
+    {
+      "Town": "North Norfolk"
+    },
+    {
+      "Town": "Norwich"
+    },
+    {
+      "Town": "South Norfolk"
+    },
+    {
+      "Town": "Corby"
+    },
+    {
+      "Town": "Daventry"
+    },
+    {
+      "Town": "East Northamptonshire"
+    },
+    {
+      "Town": "Kettering"
+    },
+    {
+      "Town": "Northampton"
+    },
+    {
+      "Town": "South Northamptonshire"
+    },
+    {
+      "Town": "Wellingborough"
+    },
+    {
+      "Town": "Craven"
+    },
+    {
+      "Town": "Hambleton"
+    },
+    {
+      "Town": "Harrogate"
+    },
+    {
+      "Town": "Richmondshire"
+    },
+    {
+      "Town": "Ryedale"
+    },
+    {
+      "Town": "Scarborough"
+    },
+    {
+      "Town": "Selby"
+    },
+    {
+      "Town": "Ashfield"
+    },
+    {
+      "Town": "Bassetlaw"
+    },
+    {
+      "Town": "Broxtowe"
+    },
+    {
+      "Town": "Gedling"
+    },
+    {
+      "Town": "Mansfield"
+    },
+    {
+      "Town": "Newark and Sherwood"
+    },
+    {
+      "Town": "Rushcliffe"
+    },
+    {
+      "Town": "Cherwell"
+    },
+    {
+      "Town": "Oxford"
+    },
+    {
+      "Town": "South Oxfordshire"
+    },
+    {
+      "Town": "Vale of White Horse"
+    },
+    {
+      "Town": "West Oxfordshire"
+    },
+    {
+      "Town": "Mendip"
+    },
+    {
+      "Town": "Sedgemoor"
+    },
+    {
+      "Town": "South Somerset"
+    },
+    {
+      "Town": "Taunton Deane"
+    },
+    {
+      "Town": "West Somerset"
+    },
+    {
+      "Town": "Cannock Chase"
+    },
+    {
+      "Town": "East Staffordshire"
+    },
+    {
+      "Town": "Lichfield"
+    },
+    {
+      "Town": "Newcastle-under-Lyme"
+    },
+    {
+      "Town": "South Staffordshire"
+    },
+    {
+      "Town": "Stafford"
+    },
+    {
+      "Town": "Staffordshire Moorlands"
+    },
+    {
+      "Town": "Tamworth"
+    },
+    {
+      "Town": "Babergh"
+    },
+    {
+      "Town": "Forest Heath"
+    },
+    {
+      "Town": "Ipswich"
+    },
+    {
+      "Town": "Mid Suffolk"
+    },
+    {
+      "Town": "St Edmundsbury"
+    },
+    {
+      "Town": "Suffolk Coastal"
+    },
+    {
+      "Town": "Waveney"
+    },
+    {
+      "Town": "Birmingham"
+    },
+    {
+      "Town": "Coventry"
+    },
+    {
+      "Town": "Dudley"
+    },
+    {
+      "Town": "Sandwell"
+    },
+    {
+      "Town": "Solihull"
+    },
+    {
+      "Town": "Walsall"
+    },
+    {
+      "Town": "Wolverhampton"
+    },
+    {
+      "Town": "Bradford"
+    },
+    {
+      "Town": "Calderdale"
+    },
+    {
+      "Town": "Kirklees"
+    },
+    {
+      "Town": "Leeds"
+    },
+    {
+      "Town": "Wakefield"
+    },
+    {
+      "Town": "Gateshead"
+    },
+    {
+      "Town": "City of London"
+    },
+    {
+      "Town": "Barking and Dagenham"
+    },
+    {
+      "Town": "Barnet"
+    },
+    {
+      "Town": "Bexley"
+    },
+    {
+      "Town": "Brent"
+    },
+    {
+      "Town": "Bromley"
+    },
+    {
+      "Town": "Camden"
+    },
+    {
+      "Town": "Croydon"
+    },
+    {
+      "Town": "Ealing"
+    },
+    {
+      "Town": "Enfield"
+    },
+    {
+      "Town": "Greenwich"
+    },
+    {
+      "Town": "Hackney"
+    },
+    {
+      "Town": "Hammersmith and Fulham"
+    },
+    {
+      "Town": "Haringey"
+    },
+    {
+      "Town": "Harrow"
+    },
+    {
+      "Town": "Havering"
+    },
+    {
+      "Town": "Hillingdon"
+    },
+    {
+      "Town": "Hounslow"
+    },
+    {
+      "Town": "Islington"
+    },
+    {
+      "Town": "Kensington and Chelsea"
+    },
+    {
+      "Town": "Kingston upon Thames"
+    },
+    {
+      "Town": "Lambeth"
+    },
+    {
+      "Town": "Lewisham"
+    },
+    {
+      "Town": "Merton"
+    },
+    {
+      "Town": "Newham"
+    },
+    {
+      "Town": "Redbridge"
+    },
+    {
+      "Town": "Richmond upon Thames"
+    },
+    {
+      "Town": "Southwark"
+    },
+    {
+      "Town": "Sutton"
+    },
+    {
+      "Town": "Tower Hamlets"
+    },
+    {
+      "Town": "Waltham Forest"
+    },
+    {
+      "Town": "Wandsworth"
+    },
+    {
+      "Town": "Westminster"
+    },
+    {
+      "Town": "Antrim and Newtownabbey"
+    },
+    {
+      "Town": "Armagh, Banbridge and Craigavon"
+    },
+    {
+      "Town": "Belfast"
+    },
+    {
+      "Town": "Causeway Coast and Glens"
+    },
+    {
+      "Town": "Derry and Strabane"
+    },
+    {
+      "Town": "Fermanagh and Omagh"
+    },
+    {
+      "Town": "Lisburn and Castlereagh"
+    },
+    {
+      "Town": "Mid and East Antrim"
+    },
+    {
+      "Town": "Mid Ulster"
+    },
+    {
+      "Town": "Newry, Mourne and Down"
+    }
+  ]
+}

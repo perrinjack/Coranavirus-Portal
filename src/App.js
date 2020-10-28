@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 function App() {
   const handleCalculateClick = (place) => {
-    setLocation(place.town);
+    setLocation(place.Town);
   };
 
   const [location, setLocation] = React.useState('');
