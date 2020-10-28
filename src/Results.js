@@ -14,13 +14,13 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name) {
+  return { name };
 }
 const rows = [
-  createData('Slough', 159),
-  createData('St Albans', 237),
-  createData('Harpenden', 262),
+  createData('Slough'),
+  createData('St Albans'),
+  createData('Harpenden'),
 ];
 const endpoint =
   'https://api.coronavirus.data.gov.uk/v1/data?' +
@@ -58,7 +58,9 @@ class Results extends React.Component {
 
   localData() {
     axios
-      .get(endpoint1, { timeout: 10000 })
+      .get( 'https://api.coronavirus.data.gov.uk/v1/data?' +
+      `filters=areaType=ltla;areaName=${this.state.location}&` +
+      'structure={"date":"date","newCases":"newCasesByPublishDate"}', { timeout: 10000 })
       .then((response) => {
         console.log(response);
         this.setState({

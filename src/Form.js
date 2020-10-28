@@ -70,7 +70,6 @@ function Form(input) {
             <Button
               type="submit"
               fullWidth
-
               variant="contained"
               color="primary"
               onClick={() => input.input(place)}
@@ -90,10 +89,10 @@ function Form(input) {
 
 const locations = [
   { town: 'St Albans', country: 'England' },
-  { town: 'Harpenden', country: 'England' },
-  { town: 'Luton', country: 'England' },
-  { town: 'Bristol', country: 'England' },
-  { town: 'Battersea', country: 'England' },
+  { town: 'Halton', country: 'England' },
+  { town: 'Warrington', country: 'England' },
+  { town: 'Hartlepool', country: 'England' },
+  { town: 'Blackpool', country: 'England' },
 ];
 
 export default Form;
