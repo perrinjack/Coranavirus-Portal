@@ -3,13 +3,11 @@ import './App.css';
 import locals from './locals.json';
 
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import {Button, Container, CssBaseline, TextField, Typography   }from '@material-ui/core';
 import { Autocomplete, createFilterOptions } from '@material-ui/lab';
-import Container from '@material-ui/core/Container';
+
 import { Link } from 'react-router-dom';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
+
 
 function Form(input) {
   const [place, setPlace] = React.useState('');
@@ -29,13 +27,9 @@ function Form(input) {
       flexDirection: 'column',
       alignItems: 'center',
     },
-    avatar: {
-      margin: theme.spacing(1),
-      backgroundColor: theme.palette.secondary.main,
-    },
     form: {
       width: '100%', // Fix IE 11 issue.
-      marginTop: theme.spacing(1),
+      marginTop: theme.spacing(4),
     },
     submit: {
       margin: theme.spacing(3, 0, 2),

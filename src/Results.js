@@ -31,7 +31,7 @@ const LoadingIndicator = (props) => {
           alignItems: 'center',
         }}
       >
-        <Loader type="OneDots" color="#2BAD60" height="50" width="50" />
+        <Loader type="Bars" color="#2BAD60" height="50" width="50" />
       </div>
     )
   );
@@ -120,10 +120,10 @@ class Results extends React.Component {
     let dataNational;
     if (this.state.localNewCasesToday) {
       dataNational = (
-        <p>
+        <div>
           <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
           <p>Number of Deaths: {this.state.nationwideNewCasesToday}</p>
-        </p>
+        </div>
       );
     } else {
       dataNational = <LoadingIndicator />;
