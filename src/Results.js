@@ -15,8 +15,10 @@ import TableRow from '@material-ui/core/TableRow';
 import { usePromiseTracker } from 'react-promise-tracker';
 import { trackPromise } from 'react-promise-tracker';
 import Loader from 'react-loader-spinner';
+import delayAdapterEnhancer from 'axios-delay';
 const LoadingIndicator = (props) => {
-  const { promiseInProgress } = usePromiseTracker();
+const { promiseInProgress } = usePromiseTracker();
+
 
   return (
     promiseInProgress && (
@@ -48,6 +50,9 @@ const endpoint =
   'filters=areaType=nation;areaName=england&' +
   'structure={"date":"date","newCases":"newCasesByPublishDate"}';
 
+  const api = axios.create({
+    adapter: delayAdapterEnhancer(axios.defaults.adapter)
+  });
 class Results extends React.Component {
   constructor(props) {
     super(props); // or super(props) ?
@@ -74,12 +79,12 @@ class Results extends React.Component {
 
   localData() {
     trackPromise(
-      axios
+      api
         .get(
           'https://api.coronavirus.data.gov.uk/v1/data?' +
             `filters=areaType=ltla;areaName=${this.state.location}&` +
             'structure={"date":"date","newCases":"newCasesByPublishDate"}',
-          { timeout: 10000 }
+          { delay: 2000 }
         )
         .then((response) => {
           console.log(response);
