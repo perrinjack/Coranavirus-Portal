@@ -2,17 +2,38 @@ import React from 'react';
 import './App.css';
 import Container from '@material-ui/core/Container';
 import axios from 'axios';
-import Paper from '@material-ui/core/Paper';
+
 import Grid from '@material-ui/core/Grid';
 
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
+
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+
+import { usePromiseTracker } from 'react-promise-tracker';
+import { trackPromise } from 'react-promise-tracker';
+import Loader from 'react-loader-spinner';
+const LoadingIndicator = (props) => {
+  const { promiseInProgress } = usePromiseTracker();
+
+  return (
+    promiseInProgress && (
+      <div
+        style={{
+          width: '100%',
+          height: '100',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Loader type="ThreeDots" color="#2BAD60" height="50" width="50" />
+      </div>
+    )
+  );
+};
 
 function createData(name) {
   return { name };
@@ -27,17 +48,12 @@ const endpoint =
   'filters=areaType=nation;areaName=england&' +
   'structure={"date":"date","newCases":"newCasesByPublishDate"}';
 
-const endpoint1 =
-  'https://api.coronavirus.data.gov.uk/v1/data?' +
-  'filters=areaType=ltla;areaName=sutton&' +
-  'structure={"date":"date","newCases":"newCasesByPublishDate"}';
-
 class Results extends React.Component {
   constructor(props) {
     super(props); // or super(props) ?
     this.state = {
-      nationwideNewCasesToday: '',
-      localNewCasesToday: '',
+      nationwideNewCasesToday: null,
+      localNewCasesToday: null,
       location: this.props.location,
     };
   }
@@ -57,19 +73,24 @@ class Results extends React.Component {
   }
 
   localData() {
-    axios
-      .get( 'https://api.coronavirus.data.gov.uk/v1/data?' +
-      `filters=areaType=ltla;areaName=${this.state.location}&` +
-      'structure={"date":"date","newCases":"newCasesByPublishDate"}', { timeout: 10000 })
-      .then((response) => {
-        console.log(response);
-        this.setState({
-          localNewCasesToday: response.data.data[0].newCases,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    trackPromise(
+      axios
+        .get(
+          'https://api.coronavirus.data.gov.uk/v1/data?' +
+            `filters=areaType=ltla;areaName=${this.state.location}&` +
+            'structure={"date":"date","newCases":"newCasesByPublishDate"}',
+          { timeout: 10000 }
+        )
+        .then((response) => {
+          console.log(response);
+          this.setState({
+            localNewCasesToday: response.data.data[0].newCases,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    );
   }
 
   componentDidMount() {
@@ -78,6 +99,17 @@ class Results extends React.Component {
   }
 
   render() {
+    let dataLocal;
+    if (this.state.localNewCasesToday) {
+      dataLocal = (
+        <p>
+          New Cases in {this.state.location}: {this.state.localNewCasesToday}
+        </p>
+      );
+    } else {
+      dataLocal = <LoadingIndicator />;
+    }
+
     return (
       <div>
         <Container maxWidth="md">
@@ -90,10 +122,7 @@ class Results extends React.Component {
 
             <Grid item xs={'auto'} sm={4} align="center">
               <h2> {this.state.location} Today</h2>
-              <p>
-                New Cases in {this.state.location}:{' '}
-                {this.state.localNewCasesToday}
-              </p>
+              {dataLocal}
             </Grid>
             <Grid item xs={'auto'} sm={4} align="center">
               <h2>Tier 3 Zones</h2>

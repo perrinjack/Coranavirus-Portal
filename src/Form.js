@@ -4,7 +4,7 @@ import locals from './locals.json';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import {Autocomplete, createFilterOptions} from '@material-ui/lab';
+import { Autocomplete, createFilterOptions } from '@material-ui/lab';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
