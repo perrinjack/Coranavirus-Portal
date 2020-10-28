@@ -17,8 +17,7 @@ import { trackPromise } from 'react-promise-tracker';
 import Loader from 'react-loader-spinner';
 import delayAdapterEnhancer from 'axios-delay';
 const LoadingIndicator = (props) => {
-const { promiseInProgress } = usePromiseTracker();
-
+  const { promiseInProgress } = usePromiseTracker();
 
   return (
     promiseInProgress && (
@@ -50,9 +49,9 @@ const endpoint =
   'filters=areaType=nation;areaName=england&' +
   'structure={"date":"date","newCases":"newCasesByPublishDate"}';
 
-  const api = axios.create({
-    adapter: delayAdapterEnhancer(axios.defaults.adapter)
-  });
+const api = axios.create({
+  adapter: delayAdapterEnhancer(axios.defaults.adapter),
+});
 class Results extends React.Component {
   constructor(props) {
     super(props); // or super(props) ?
@@ -64,17 +63,19 @@ class Results extends React.Component {
   }
 
   nationwideData() {
-    axios
-      .get(endpoint, { timeout: 10000 })
-      .then((response) => {
-        console.log(response.data.data[0].newCases);
-        this.setState({
-          nationwideNewCasesToday: response.data.data[0].newCases,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    trackPromise(
+      api
+        .get(endpoint, { delay: 2000 })
+        .then((response) => {
+          console.log(response.data.data[0].newCases);
+          this.setState({
+            nationwideNewCasesToday: response.data.data[0].newCases,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    );
   }
 
   localData() {
@@ -115,14 +116,25 @@ class Results extends React.Component {
       dataLocal = <LoadingIndicator />;
     }
 
+    let dataNational;
+    if (this.state.localNewCasesToday) {
+      dataNational = (
+        <p>
+          <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
+          <p>Number of Deaths: {this.state.nationwideNewCasesToday}</p>
+        </p>
+      );
+    } else {
+      dataNational = <LoadingIndicator />;
+    }
+
     return (
       <div>
         <Container maxWidth="md">
           <Grid container spacing={2} justify="center">
             <Grid item xs={'auto'} sm={4} align="center">
               <h2>Overview of the U.K</h2>
-              <p>New Cases Nationwide: {this.state.nationwideNewCasesToday}</p>
-              <p>Number of Deaths: {this.state.nationwideNewCasesToday}</p>
+              {dataNational}
             </Grid>
 
             <Grid item xs={'auto'} sm={4} align="center">
