@@ -4,12 +4,11 @@ import locals from './locals.json';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import {Autocomplete, createFilterOptions} from '@material-ui/lab';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-
 import Typography from '@material-ui/core/Typography';
 
 function Form(input) {
@@ -19,8 +18,9 @@ function Form(input) {
   const handleChangeMake = (value) => {
     setPlace(value);
     setButtonDisabled(!buttonDisabled);
-    console.log(locals.local_authorities);
   };
+
+  const locations = locals.local_authorities;
 
   const useStyles = makeStyles((theme) => ({
     paper: {
@@ -42,7 +42,15 @@ function Form(input) {
     },
   }));
 
+  const OPTIONS_LIMIT = 5;
+  const defaultFilterOptions = createFilterOptions();
+
+  const filterOptions = (options, state) => {
+    return defaultFilterOptions(options, state).slice(0, OPTIONS_LIMIT);
+  };
+
   const classes = useStyles();
+
   return (
     <div>
       <Container component="main" maxWidth="xs">
@@ -53,6 +61,7 @@ function Form(input) {
           </Typography>
           <form className={classes.form}>
             <Autocomplete
+              filterOptions={filterOptions}
               id="combo-box-demo"
               options={locations}
               getOptionLabel={(option) => `${option.Town} `}
@@ -81,7 +90,5 @@ function Form(input) {
     </div>
   );
 }
-
-const locations = locals.local_authorities;
 
 export default Form;
