@@ -9,6 +9,7 @@ class Test extends React.Component {
     super(props);
     this.state = {
       localData: [0],
+      nationalData: [0],
     };
   }
   localData() {
@@ -19,6 +20,7 @@ class Test extends React.Component {
           'structure={"date":"date","newCases":"newCasesByPublishDate"}'
       )
       .then((response) => {
+        console.log(this.props.count);
         console.log(response.data.data);
         this.setState({
           localData: response.data.data,
@@ -29,13 +31,35 @@ class Test extends React.Component {
       });
   }
 
-  componentDidUpdate() {
-    this.localData();
+  nationalData() {
+    axios
+      .get(
+        'https://api.coronavirus.data.gov.uk/v1/data?' +
+          `filters=areaType=nation;areaName=england&` +
+          'structure={"date":"date","newCases":"newCasesByPublishDate"}'
+      )
+      .then((response) => {
+        console.log(response.data.data);
+        this.setState({
+          nationalData: response.data.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  componentDidMount() {
+    this.nationalData();
   }
   render() {
     return (
       <div>
-        <Dashboard today ={this.state.localData[0].newCases} />
+        <Dashboard
+          today={100}
+          yeah={this.state.nationalData[0].newCases}
+          heading={this.props.count}
+        />
       </div>
     );
   }

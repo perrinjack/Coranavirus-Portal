@@ -163,7 +163,7 @@ export default function Dashboard(props) {
             noWrap
             className={classes.title}
           >
-            Virusfigures.com
+            {props.heading}
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -198,7 +198,7 @@ export default function Dashboard(props) {
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits title="New cases today" data={props.today} date="5th March" />
+                <Deposits title="New cases today" data={props.yeah} date="5th March" />
               </Paper>
             </Grid>
             <Grid item xs={12} md={4} lg={3}>
