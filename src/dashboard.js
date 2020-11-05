@@ -18,7 +18,7 @@ import Link from '@material-ui/core/Link';
 // import MenuIcon from '@material-ui/icons/Menu';
 // import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // import NotificationsIcon from '@material-ui/icons/Notifications';
-// import { mainListItems, secondaryListItems } from './listItems';
+import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './deposits';
 // import Orders from './Orders';
@@ -178,9 +178,9 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        {/* <List>{mainListItems}</List> */}
+        <List>{mainListItems}</List>
         <Divider />
-        {/* <List>{secondaryListItems}</List> */}
+        <List>{secondaryListItems}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -200,14 +200,12 @@ export default function Dashboard() {
               </Paper>
             </Grid>
             <Grid item xs={12} md={6} lg={6}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits />
-              </Paper>
+              <Paper className={fixedHeightPaper}></Paper>
             </Grid>
 
             <Grid item xs={12} md={6} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits />
+                <Deposits title="St Albans today" data={100} date="5th March" />
               </Paper>
             </Grid>
             {/* Recent Orders */}
