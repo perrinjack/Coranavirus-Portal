@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Form from './Form';
+import Dashboard from './dashboard.js';
 import Test from './text';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -15,14 +16,17 @@ function App() {
       <div>
         {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
-        <AppBar position="static">
+        {/* <AppBar position="static">
           <Toolbar component={Link} to="/">
             <Typography variant="h6">Home</Typography>
           </Toolbar>
-        </AppBar>
+        </AppBar> */}
         <Switch>
           <Route exact path="/">
             <Form />
+          </Route>
+          <Route exact path="/jj">
+            <Dashboard />
           </Route>
           <Route exact path="/results">
             {location ? <Test /> : <Redirect to="/" />}
