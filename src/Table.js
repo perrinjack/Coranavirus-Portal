@@ -14,16 +14,12 @@ const columns = [
   { id: 'newCases', label: 'New Cases', minWidth: 100 },
 ];
 
-function createData(date, newCases) {
-  return { date, newCases };
-}
-
 const useStyles = makeStyles({
   root: {
-    width: '80%',
+    width: '100%',
   },
   container: {
-    maxHeight: 440,
+    maxHeight: 600,
   },
 });
 
@@ -32,10 +28,18 @@ export default function StickyHeadTable(props) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-  const rows = props.data;
+  function createData(date, number) {
+    var mydate = new Date(date);
+    return { date: mydate.toDateString(), newCases: number };
+  }
+
+//   const rows = props.data
+
+  const rows = props.data.map(dt => createData(dt.date, dt.newCases));
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
+    console.log(rows);
   };
 
   const handleChangeRowsPerPage = (event) => {

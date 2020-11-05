@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { connect } from 'react-redux';
@@ -11,7 +11,7 @@ class Test extends React.Component {
       nationalData: [],
     };
   }
-  localData = () => {
+  localData() {
     axios
       .get(
         'https://api.coronavirus.data.gov.uk/v1/data?' +
@@ -27,9 +27,9 @@ class Test extends React.Component {
       .catch((error) => {
         console.log(error);
       });
-  };
+  }
 
-  nationwideData = () => {
+  nationwideData() {
     axios
       .get(
         'https://api.coronavirus.data.gov.uk/v1/data?' +
@@ -42,7 +42,7 @@ class Test extends React.Component {
       .catch((error) => {
         console.log(error);
       });
-  };
+  }
 
   componentDidMount() {
     this.nationwideData();
@@ -51,11 +51,8 @@ class Test extends React.Component {
   render() {
     return (
       <div>
-        <h3>Entire UK</h3>
-        <StickyHeadTable data={this.state.nationalData.slice(0, 7)} />
-
         <h3>{this.props.count}</h3>
-        <StickyHeadTable data={this.state.localData.slice(0, 7)} />
+        <StickyHeadTable data={this.state.localData} />
       </div>
     );
   }

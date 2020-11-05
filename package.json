@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
     "axios-delay": "^1.0.0-rc6",
+    "date-and-time": "^0.14.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-loader-spinner": "^3.1.14",
@@ -26,7 +27,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ]
   },
   "browserslist": {
     "production": [
@@ -39,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1"
   }
 }
