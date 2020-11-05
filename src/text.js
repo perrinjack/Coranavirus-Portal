@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { connect } from 'react-redux';
-
+import StickyHeadTable from './Table';
 class Test extends React.Component {
   constructor() {
     super();
@@ -16,8 +16,7 @@ class Test extends React.Component {
       .get(
         'https://api.coronavirus.data.gov.uk/v1/data?' +
           `filters=areaType=ltla;areaName=${this.props.count}&` +
-          'structure={"date":"date","newCases":"newCasesByPublishDate"}',
-        { delay: 2000 }
+          'structure={"date":"date","newCases":"newCasesByPublishDate"}'
       )
       .then((response) => {
         console.log(response.data.data);
@@ -35,8 +34,7 @@ class Test extends React.Component {
       .get(
         'https://api.coronavirus.data.gov.uk/v1/data?' +
           'filters=areaType=nation;areaName=england&' +
-          'structure={"date":"date","newCases":"newCasesByPublishDate"}',
-        { delay: 2000 }
+          'structure={"date":"date","newCases":"newCasesByPublishDate"}'
       )
       .then((response) => {
         this.setState({ nationalData: response.data.data });
@@ -53,19 +51,14 @@ class Test extends React.Component {
   render() {
     return (
       <div>
-        {this.props.count}
-        {this.state.localData.slice(0, 7).map((num) => (
-          <p>
-            {num.date} : {num.newCases}
-          </p>
-        ))}
-
         <p>Entire UK</p>
         {this.state.nationalData.slice(0, 7).map((num) => (
           <p>
             {num.date} : {num.newCases}
           </p>
         ))}
+        <h3>{this.props.count}</h3>
+        <StickyHeadTable data={this.state.localData.slice(0, 7)} />
       </div>
     );
   }
