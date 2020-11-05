@@ -41,14 +41,14 @@ function Form() {
   const filterOptions = (options, state) => {
     return defaultFilterOptions(options, state).slice(0, OPTIONS_LIMIT);
   };
+  
   const classes = useStyles();
-
-  const [place, setPlace] = React.useState('');
+  const [place, setPlace] = React.useState(null);
 
   const handleChangeMake = (value) => {
     setPlace(value);
-
-    dispatch(switchButton());
+    console.log(value)
+    dispatch(switchButton(value));
   };
 
   return (

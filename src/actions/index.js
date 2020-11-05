@@ -5,8 +5,9 @@ export const increment = (nr) => {
   };
 };
 
-export const switchButton = () => {
+export const switchButton = (vl) => {
   return {
     type: 'DARK',
+    payload: vl,
   };
 };
