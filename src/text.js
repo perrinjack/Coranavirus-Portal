@@ -51,12 +51,9 @@ class Test extends React.Component {
   render() {
     return (
       <div>
-        <p>Entire UK</p>
-        {this.state.nationalData.slice(0, 7).map((num) => (
-          <p>
-            {num.date} : {num.newCases}
-          </p>
-        ))}
+        <h3>Entire UK</h3>
+        <StickyHeadTable data={this.state.nationalData.slice(0, 7)} />
+
         <h3>{this.props.count}</h3>
         <StickyHeadTable data={this.state.localData.slice(0, 7)} />
       </div>
