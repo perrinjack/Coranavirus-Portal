@@ -68,7 +68,7 @@ class Results extends React.Component {
       api
         .get(endpoint, { delay: 2000 })
         .then((response) => {
-          console.log(response.data.data[0].newCases);
+          console.log(response.data.data[0]);
           this.setState({
             nationwideNewCasesToday: response.data.data[0].newCases,
           });

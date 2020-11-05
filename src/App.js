@@ -1,18 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Form from './Form';
-import Results from './Results';
+import Test from './text';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 function App() {
-  const handleCalculateClick = (place) => {
-    setLocation(place.Town);
-  };
-
-  const [location, setLocation] = React.useState('');
   return (
     <Router>
       <div>
@@ -25,14 +20,10 @@ function App() {
         </AppBar>
         <Switch>
           <Route exact path="/">
-            <Form input={handleCalculateClick} />
+            <Form />
           </Route>
           <Route exact path="/results">
-            {location === '' ? (
-              <Redirect to="/" />
-            ) : (
-              <Results location={location} />
-            )}
+            <Test />
           </Route>
           <Route path="/">
             <h1>Custom 404 Page</h1>

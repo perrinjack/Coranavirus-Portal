@@ -1,23 +1,22 @@
 import React from 'react';
 import './App.css';
 import locals from './locals.json';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { increment } from './actions';
 import { makeStyles } from '@material-ui/core/styles';
-import {Button, Container, CssBaseline, TextField, Typography   }from '@material-ui/core';
+import {
+  Button,
+  Container,
+  CssBaseline,
+  TextField,
+  Typography,
+} from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import { Autocomplete, createFilterOptions } from '@material-ui/lab';
 
-import { Link } from 'react-router-dom';
-
-
 function Form(input) {
-  const [place, setPlace] = React.useState('');
-  const [buttonDisabled, setButtonDisabled] = React.useState(true);
-
-  const handleChangeMake = (value) => {
-    setPlace(value);
-    setButtonDisabled(!buttonDisabled);
-  };
-
+  
+  const dispatch = useDispatch();
   const locations = locals.local_authorities;
 
   const useStyles = makeStyles((theme) => ({
@@ -38,13 +37,15 @@ function Form(input) {
 
   const OPTIONS_LIMIT = 5;
   const defaultFilterOptions = createFilterOptions();
-
   const filterOptions = (options, state) => {
     return defaultFilterOptions(options, state).slice(0, OPTIONS_LIMIT);
   };
-
   const classes = useStyles();
 
+  const [place, setPlace] = React.useState('');
+  const handleChangeMake = (value) => {
+    setPlace(value);
+  };
   return (
     <div>
       <Container component="main" maxWidth="xs">
@@ -55,26 +56,24 @@ function Form(input) {
           </Typography>
           <form className={classes.form}>
             <Autocomplete
+            onChange={(event, value) => handleChangeMake(value)}
               filterOptions={filterOptions}
               id="combo-box-demo"
               options={locations}
               getOptionLabel={(option) => `${option.Town} `}
-              onChange={(event, value) => handleChangeMake(value)}
               renderInput={(params) => (
                 <TextField {...params} label="Location" variant="outlined" />
               )}
             />
-
             <Button
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
-              onClick={() => input.input(place)}
-              className={classes.submit}
-              disabled={buttonDisabled}
               component={Link}
               to="/results"
+              onClick={(event, value) => dispatch(increment(place.Town))}
+              className={classes.submit}
             >
               View Figures
             </Button>

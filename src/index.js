@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import counterReducer from './reducers/counter';
+import loggedReducer from './reducers/logged';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 
+const allReducers = combineReducers({
+  counter: counterReducer,
+  isLogged: loggedReducer,
+});
+
+const store = createStore(allReducers);
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
