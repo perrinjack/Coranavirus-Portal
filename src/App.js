@@ -22,10 +22,7 @@ function App() {
         </AppBar> */}
         <Switch>
           <Route exact path="/">
-            <Dashboard />
-          </Route>
-          <Route exact path="/jj">
-            <Dashboard />
+            <Test />
           </Route>
 
           <Route path="/">

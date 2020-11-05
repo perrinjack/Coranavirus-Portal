@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import StickyHeadTable from './Table';
+import Dashboard from './dashboard.js';
 class Test extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      localData: [],
-      nationalData: [],
+      localData: [0],
     };
   }
   localData() {
@@ -29,30 +29,13 @@ class Test extends React.Component {
       });
   }
 
-  nationwideData() {
-    axios
-      .get(
-        'https://api.coronavirus.data.gov.uk/v1/data?' +
-          'filters=areaType=nation;areaName=england&' +
-          'structure={"date":"date","newCases":"newCasesByPublishDate"}'
-      )
-      .then((response) => {
-        this.setState({ nationalData: response.data.data });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  componentDidMount() {
-    this.nationwideData();
+  componentDidUpdate() {
     this.localData();
   }
   render() {
     return (
       <div>
-        <h3>{this.props.count}</h3>
-        <StickyHeadTable data={this.state.localData} />
+        <Dashboard today ={this.state.localData[0].newCases} />
       </div>
     );
   }

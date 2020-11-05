@@ -124,12 +124,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+  const [open, setOpen] = React.useState(true);
+  
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   const location = useSelector((state) => state.counter);
 
@@ -195,7 +198,7 @@ export default function Dashboard() {
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits title="New cases today" data={30} date="5th March" />
+                <Deposits title="New cases today" data={props.today} date="5th March" />
               </Paper>
             </Grid>
             <Grid item xs={12} md={4} lg={3}>
@@ -211,7 +214,7 @@ export default function Dashboard() {
 
             <Grid item xs={12} md={6} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits title={location} data={100} date="5th March" />
+                <Deposits title={location} data={props.today} date="5th March" />
               </Paper>
             </Grid>
             {/* Recent Orders */}
