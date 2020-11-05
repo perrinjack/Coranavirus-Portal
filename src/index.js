@@ -5,14 +5,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import counterReducer from './reducers/counter';
 import buttonReducer from './reducers/button';
-import localDataReducer from './reducers/localData';
+
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 const allReducers = combineReducers({
   counter: counterReducer,
   button: buttonReducer,
-  localData: localDataReducer,
 });
 
 const store = createStore(

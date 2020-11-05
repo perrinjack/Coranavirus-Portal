@@ -1,26 +1,22 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
-import { localDataIn } from './actions';
-function Test() {
-  const counter = useSelector((state) => state.counter);
-  const localData1 = useSelector((state) => state.localData);
-  const dispatch = useDispatch();
-  const endpointl =
-    'https://api.coronavirus.data.gov.uk/v1/data?' +
-    `filters=areaType=ltla;areaName=${counter}&` +
-    'structure={"date":"date","newCases":"newCasesByPublishDate"}';
+import { connect } from 'react-redux';
 
-  const endpointn =
-    'https://api.coronavirus.data.gov.uk/v1/data?' +
-    'filters=areaType=nation;areaName=england&' +
-    'structure={"date":"date","newCases":"newCasesByPublishDate"}';
+const endpointl =
+  'https://api.coronavirus.data.gov.uk/v1/data?' +
+  `filters=areaType=ltla;areaName=&` +
+  'structure={"date":"date","newCases":"newCasesByPublishDate"}';
 
-  const localData = () => {
+const endpointn =
+  'https://api.coronavirus.data.gov.uk/v1/data?' +
+  'filters=areaType=nation;areaName=england&' +
+  'structure={"date":"date","newCases":"newCasesByPublishDate"}';
+class Test extends React.Component {
+  localData = () => {
     axios
       .get(endpointl, { delay: 2000 })
       .then((response) => {
-        dispatch(localDataIn(100));
         console.log(response.data.data[0]);
       })
       .catch((error) => {
@@ -28,7 +24,7 @@ function Test() {
       });
   };
 
-  const nationwideData = () => {
+  nationwideData = () => {
     axios
       .get(endpointn, { delay: 2000 })
       .then((response) => {
@@ -39,16 +35,19 @@ function Test() {
       });
   };
 
-  useEffect(() => {
-    localData();
-    nationwideData();
-  });
-
-  return (
-    <div>
-      {counter} {localData1}
-    </div>
-  );
+  componentDidMount() {
+    this.localData();
+    this.nationwideData();
+  }
+  render() {
+    return <div>{this.props.count} </div>;
+  }
 }
 
-export default Test;
+const mapStateToProps = (state) => {
+  return {
+    count: state.counter,
+  };
+};
+
+export default connect(mapStateToProps)(Test);
