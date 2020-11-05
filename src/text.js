@@ -8,7 +8,7 @@ class Test extends React.Component {
     super();
     this.state = {
       localData: [],
-      nationalData: null,
+      nationalData: [],
     };
   }
   localData = () => {
@@ -39,7 +39,7 @@ class Test extends React.Component {
         { delay: 2000 }
       )
       .then((response) => {
-        this.setState({ nationalData: response.data.data[0].newCases });
+        this.setState({ nationalData: response.data.data });
       })
       .catch((error) => {
         console.log(error);
@@ -53,8 +53,15 @@ class Test extends React.Component {
   render() {
     return (
       <div>
-        {this.props.count} {this.state.nationalData}
+        {this.props.count}
         {this.state.localData.slice(0, 7).map((num) => (
+          <p>
+            {num.date} : {num.newCases}
+          </p>
+        ))}
+
+        <p>Entire UK</p>
+        {this.state.nationalData.slice(0, 7).map((num) => (
           <p>
             {num.date} : {num.newCases}
           </p>
