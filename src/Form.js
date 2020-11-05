@@ -42,10 +42,14 @@ function Form(input) {
   };
   const classes = useStyles();
 
+  const [buttonDisabled, setButtonDisabled] = React.useState(true);
   const [place, setPlace] = React.useState('');
+
   const handleChangeMake = (value) => {
     setPlace(value);
+    setButtonDisabled(!buttonDisabled);
   };
+  
   return (
     <div>
       <Container component="main" maxWidth="xs">
@@ -72,6 +76,7 @@ function Form(input) {
               color="primary"
               component={Link}
               to="/results"
+              disabled={buttonDisabled}
               onClick={(event, value) => dispatch(increment(place.Town))}
               className={classes.submit}
             >
