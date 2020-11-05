@@ -4,3 +4,9 @@ export const increment = (nr) => {
     payload: nr,
   };
 };
+
+export const switchButton = () => {
+  return {
+    type: 'DARK',
+  };
+};

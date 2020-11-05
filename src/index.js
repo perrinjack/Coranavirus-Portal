@@ -4,12 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import counterReducer from './reducers/counter';
-
+import buttonReducer from './reducers/button';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 const allReducers = combineReducers({
   counter: counterReducer,
+  button: buttonReducer,
 });
 
 const store = createStore(allReducers);

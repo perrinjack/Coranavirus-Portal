@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import locals from './locals.json';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment} from './actions';
+import { increment, switchButton } from './actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Button,
@@ -15,8 +15,9 @@ import { Link } from 'react-router-dom';
 import { Autocomplete, createFilterOptions } from '@material-ui/lab';
 
 function Form() {
-  
+  const buttonstate = useSelector((state) => state.button);
   const dispatch = useDispatch();
+
   const locations = locals.local_authorities;
 
   const useStyles = makeStyles((theme) => ({
@@ -42,14 +43,14 @@ function Form() {
   };
   const classes = useStyles();
 
-  const [buttonDisabled, setButtonDisabled] = React.useState(true);
   const [place, setPlace] = React.useState('');
 
   const handleChangeMake = (value) => {
     setPlace(value);
-    setButtonDisabled(!buttonDisabled);
+
+    dispatch(switchButton());
   };
-  
+
   return (
     <div>
       <Container component="main" maxWidth="xs">
@@ -60,7 +61,7 @@ function Form() {
           </Typography>
           <form className={classes.form}>
             <Autocomplete
-            onChange={(event, value) => handleChangeMake(value)}
+              onChange={(event, value) => handleChangeMake(value)}
               filterOptions={filterOptions}
               id="combo-box-demo"
               options={locations}
@@ -76,13 +77,14 @@ function Form() {
               color="primary"
               component={Link}
               to="/results"
-              disabled={buttonDisabled}
+              disabled={buttonstate}
               onClick={(event, value) => dispatch(increment(place.Town))}
               className={classes.submit}
             >
               View Figures
             </Button>
           </form>
+          {buttonstate}
         </div>
       </Container>
     </div>
