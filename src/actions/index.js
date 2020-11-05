@@ -11,3 +11,10 @@ export const switchButton = (vl) => {
     payload: vl,
   };
 };
+
+export const localDataIn = (vl) => {
+  return {
+    type: 'SET',
+    payload: vl,
+  };
+};
