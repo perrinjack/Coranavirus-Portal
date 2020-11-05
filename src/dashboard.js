@@ -15,12 +15,14 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
+import { useSelector, useDispatch } from 'react-redux';
 // import MenuIcon from '@material-ui/icons/Menu';
 // import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 // import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './deposits';
+import Form from './Form';
 // import Orders from './Orders';
 
 function Copyright() {
@@ -109,6 +111,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
+    
   },
   paper: {
     padding: theme.spacing(2),
@@ -128,6 +131,7 @@ export default function Dashboard() {
     setOpen(!open);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const location = useSelector((state) => state.counter);
 
   return (
     <div className={classes.root}>
@@ -156,7 +160,7 @@ export default function Dashboard() {
             noWrap
             className={classes.title}
           >
-            Virus.com
+            Virusfigures.com
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -200,18 +204,20 @@ export default function Dashboard() {
               </Paper>
             </Grid>
             <Grid item xs={12} md={6} lg={6}>
-              <Paper className={fixedHeightPaper}></Paper>
+              <Paper className={fixedHeightPaper}>
+                <Form />
+              </Paper>
             </Grid>
 
             <Grid item xs={12} md={6} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits title="St Albans today" data={100} date="5th March" />
+                <Deposits title={location} data={100} date="5th March" />
               </Paper>
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
-                <Chart />
+                <Chart title={location} />
               </Paper>
             </Grid>
           </Grid>

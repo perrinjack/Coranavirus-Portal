@@ -22,14 +22,14 @@ function Form() {
 
   const useStyles = makeStyles((theme) => ({
     paper: {
-      marginTop: theme.spacing(8),
+      marginTop: theme.spacing(2),
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
     },
     form: {
       width: '100%', // Fix IE 11 issue.
-      marginTop: theme.spacing(4),
+      marginTop: theme.spacing(3.5),
     },
     submit: {
       margin: theme.spacing(3, 0, 2),
@@ -76,12 +76,12 @@ function Form() {
               variant="contained"
               color="primary"
               component={Link}
-              to="/results"
+              to="/"
               disabled={buttonstate}
               onClick={(event, value) => dispatch(increment(place.Town))}
               className={classes.submit}
             >
-              View Figures
+              Update Figures
             </Button>
           </form>
           {buttonstate}

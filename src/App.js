@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import { useSelector } from 'react-redux';
 function App() {
-  const location = useSelector((state) => state.counter);
   return (
     <Router>
       <div>
@@ -23,14 +22,12 @@ function App() {
         </AppBar> */}
         <Switch>
           <Route exact path="/">
-            <Form />
+            <Dashboard />
           </Route>
           <Route exact path="/jj">
             <Dashboard />
           </Route>
-          <Route exact path="/results">
-            {location ? <Test /> : <Redirect to="/" />}
-          </Route>
+
           <Route path="/">
             <h1>Custom 404 Page</h1>
           </Route>

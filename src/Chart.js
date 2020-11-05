@@ -26,12 +26,12 @@ const data = [
   createData('Mon', 30),
 ];
 
-export default function Chart() {
+export default function Chart(props) {
   const theme = useTheme();
 
   return (
     <React.Fragment>
-      <Title>The last week in St Albans</Title>
+      <Title>The last week in {props.title}</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
