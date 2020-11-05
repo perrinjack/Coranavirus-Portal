@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import locals from './locals.json';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment } from './actions';
+import { increment} from './actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Button,
@@ -14,7 +14,7 @@ import {
 import { Link } from 'react-router-dom';
 import { Autocomplete, createFilterOptions } from '@material-ui/lab';
 
-function Form(input) {
+function Form() {
   
   const dispatch = useDispatch();
   const locations = locals.local_authorities;

@@ -4,13 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import counterReducer from './reducers/counter';
-import loggedReducer from './reducers/logged';
+
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 const allReducers = combineReducers({
   counter: counterReducer,
-  isLogged: loggedReducer,
 });
 
 const store = createStore(allReducers);
