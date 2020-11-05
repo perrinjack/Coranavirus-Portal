@@ -7,7 +7,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
+import { useSelector } from 'react-redux';
 function App() {
+  const location = useSelector((state) => state.counter);
   return (
     <Router>
       <div>
@@ -23,7 +25,7 @@ function App() {
             <Form />
           </Route>
           <Route exact path="/results">
-            <Test />
+            {location ? <Test /> : <Redirect to="/" />}
           </Route>
           <Route path="/">
             <h1>Custom 404 Page</h1>
