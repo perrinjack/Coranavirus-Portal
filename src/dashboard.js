@@ -17,8 +17,8 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import { useSelector, useDispatch } from 'react-redux';
 // import MenuIcon from '@material-ui/icons/Menu';
-// import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-// import NotificationsIcon from '@material-ui/icons/Notifications';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './deposits';
@@ -164,10 +164,8 @@ export default function Dashboard(props) {
           >
             Virusfigures.com
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              {/* <NotificationsIcon /> */}
-            </Badge>
+          <IconButton color="inherit" href="https://github.com/perrinjack">
+            <GitHubIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -180,7 +178,7 @@ export default function Dashboard(props) {
       >
         <div className={classes.toolbarIcon}>
           <IconButton onClick={toggleDrawer}>
-            {/* <ChevronLeftIcon /> */}
+            <ChevronLeftIcon />
           </IconButton>
         </div>
         <Divider />
@@ -192,7 +190,6 @@ export default function Dashboard(props) {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-              
             {/* Data displayed */}
 
             {/* New Cases*/}
@@ -217,7 +214,7 @@ export default function Dashboard(props) {
                 <Form />
               </Paper>
             </Grid>
-{/* Local daily figures*/}
+            {/* Local daily figures*/}
             <Grid item xs={12} md={6} lg={3}>
               <Paper className={fixedHeightPaper}>
                 <Deposits
