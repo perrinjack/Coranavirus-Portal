@@ -52,6 +52,7 @@ class DataGenerator extends React.Component {
 
   componentDidMount() {
     this.nationalData();
+    this.localData();
   }
 
   componentDidUpdate(prevProps, prevState) {

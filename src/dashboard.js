@@ -117,7 +117,7 @@ export default function Dashboard(props) {
     setOpen(!open);
   };
 
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   const location = useSelector((state) => state.counter);
