@@ -12,6 +12,7 @@
     "axios": "^0.20.0",
     "axios-delay": "^1.0.0-rc6",
     "date-and-time": "^0.14.1",
+    "express": "^4.17.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-loader-spinner": "^3.1.14",
