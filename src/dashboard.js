@@ -192,9 +192,10 @@ export default function Dashboard(props) {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Chart */}
+              
+            {/* Data displayed */}
 
-            {/* Recent Deposits */}
+            {/* New Cases*/}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
                 <Deposits
@@ -204,17 +205,19 @@ export default function Dashboard(props) {
                 />
               </Paper>
             </Grid>
+            {/* Deaths*/}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
                 <Deposits title="Deaths today" data={100} date="5th March" />
               </Paper>
             </Grid>
+            {/* Local Form Entry*/}
             <Grid item xs={12} md={6} lg={6}>
               <Paper className={fixedHeightPaper}>
                 <Form />
               </Paper>
             </Grid>
-
+{/* Local daily figures*/}
             <Grid item xs={12} md={6} lg={3}>
               <Paper className={fixedHeightPaper}>
                 <Deposits
@@ -224,13 +227,24 @@ export default function Dashboard(props) {
                 />
               </Paper>
             </Grid>
-            {/* Recent Orders */}
+            {/* Local Graph*/}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
-                <Chart title={location} stuff={props.graph} />
+                <Chart
+                  title={location}
+                  data={props.localdata}
+                  datalength={14}
+                />
+              </Paper>
+            </Grid>
+            {/* National Graph*/}
+            <Grid item xs={12} md={8} lg={12}>
+              <Paper className={fixedHeightPaper}>
+                <Chart title="UK" data={props.nationaldata} datalength={7} />
               </Paper>
             </Grid>
           </Grid>
+
           <Box pt={4}>
             <Copyright />
           </Box>

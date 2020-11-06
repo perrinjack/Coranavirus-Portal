@@ -18,7 +18,7 @@ export default function Chart(props) {
       <Title>The last week in {props.title}</Title>
       <ResponsiveContainer>
         <LineChart
-          data={props.stuff.slice(0, 14).reverse()}
+          data={props.data.slice(0, props.datalength).reverse()}
           margin={{
             top: 16,
             right: 16,
