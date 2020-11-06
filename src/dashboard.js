@@ -192,7 +192,7 @@ export default function Dashboard(props) {
             {/* Deaths*/}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits title="Deaths today" data={100} date="5th March" />
+                <Deposits title="Deaths today" data={props.nationaldata[0].deaths} date="5th March" />
               </Paper>
             </Grid>
             {/* Local Form Entry*/}
