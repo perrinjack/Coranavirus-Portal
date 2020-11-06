@@ -10,6 +10,7 @@ class Test extends React.Component {
     this.state = {
       localData: [0],
       nationalData: [0],
+      test: this.props.count,
     };
   }
   localData() {
@@ -52,6 +53,13 @@ class Test extends React.Component {
   componentDidMount() {
     this.nationalData();
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.count !== this.props.count) {
+      this.localData();
+    }
+  }
+
   render() {
     return (
       <div>
