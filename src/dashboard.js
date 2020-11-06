@@ -97,6 +97,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
+    backgroundColor:theme.palette.grey[100]
   },
   paper: {
     padding: theme.spacing(2),
@@ -173,7 +174,7 @@ export default function Dashboard(props) {
         <Divider />
         <List>{secondaryListItems}</List>
       </Drawer>
-      <main className={classes.content}>
+      <main className={classes.content} style={{backgroundColor: "#f5f5f5"}} >
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
