@@ -36,7 +36,7 @@ class DataGenerator extends React.Component {
     axios
       .get(
         'https://api.coronavirus.data.gov.uk/v1/data?' +
-          `filters=areaType=nation;areaName=england&` +
+          `filters=areaType=overview&` +
           'structure={"date":"date","newCases":"newCasesByPublishDate", "deaths":"newDeaths28DaysByPublishDate"}'
       )
       .then((response) => {
