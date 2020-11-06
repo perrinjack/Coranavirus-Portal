@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
-    backgroundColor:theme.palette.grey[100]
+    backgroundColor: theme.palette.grey[100],
   },
   paper: {
     padding: theme.spacing(2),
@@ -174,7 +174,7 @@ export default function Dashboard(props) {
         <Divider />
         <List>{secondaryListItems}</List>
       </Drawer>
-      <main className={classes.content} style={{backgroundColor: "#f5f5f5"}} >
+      <main className={classes.content} style={{ backgroundColor: '#f5f5f5' }}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
@@ -219,11 +219,7 @@ export default function Dashboard(props) {
             {/* Local Graph*/}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
-                <Chart
-                  title={location}
-                  data={props.localdata}
-                  datalength={14}
-                />
+                <Chart title={location} data={props.localdata} datalength={7} />
               </Paper>
             </Grid>
             {/* National Graph*/}
