@@ -64,8 +64,9 @@ class Test extends React.Component {
     return (
       <div>
         <Dashboard
-          today={100}
+          today={this.state.localData[0].newCases}
           yeah={this.state.nationalData[0].newCases}
+          graph = {this.state.localData}
           heading={this.props.count}
         />
       </div>

@@ -16,14 +16,13 @@ function createData(time, amount) {
 }
 
 const data = [
-  createData('Mon', 0),
-  createData('Tue', 30),
-  createData('Wed', 30),
-  createData('Thur', 30),
-  createData('Fri', 30),
-  createData('Sat', 30),
-  createData('Sun', 30),
-  createData('Mon', 30),
+  { date: '2020-11-05', newCases: 55 },
+  { date: '2020-11-04', newCases: 40 },
+  { date: '2020-11-03', newCases: 64 },
+  { date: '2020-11-02', newCases: 39 },
+  { date: '2020-11-01', newCases: 48 },
+  { date: '2020-10-31', newCases: 55 },
+  { date: '2020-10-30', newCases: 44 },
 ];
 
 export default function Chart(props) {
@@ -34,7 +33,7 @@ export default function Chart(props) {
       <Title>The last week in {props.title}</Title>
       <ResponsiveContainer>
         <LineChart
-          data={data}
+          data={props.stuff.slice(0, 14)}
           margin={{
             top: 16,
             right: 16,
@@ -42,7 +41,7 @@ export default function Chart(props) {
             left: 24,
           }}
         >
-          <XAxis dataKey="time" stroke={theme.palette.text.secondary} />
+          <XAxis dataKey="date" stroke={theme.palette.text.secondary} />
           <YAxis stroke={theme.palette.text.secondary}>
             <Label
               angle={270}
@@ -57,7 +56,7 @@ export default function Chart(props) {
           </YAxis>
           <Line
             type="monotone"
-            dataKey="amount"
+            dataKey="newCases"
             stroke={theme.palette.primary.main}
             dot={true}
           />

@@ -111,7 +111,6 @@ const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
-    
   },
   paper: {
     padding: theme.spacing(2),
@@ -126,13 +125,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard(props) {
   const classes = useStyles();
-  
+
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
   const [open, setOpen] = React.useState(true);
-  
+
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   const location = useSelector((state) => state.counter);
 
@@ -163,7 +162,7 @@ export default function Dashboard(props) {
             noWrap
             className={classes.title}
           >
-            {props.heading}
+            Virusfigures.com
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -198,7 +197,11 @@ export default function Dashboard(props) {
             {/* Recent Deposits */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits title="New cases today" data={props.yeah} date="5th March" />
+                <Deposits
+                  title="New cases today"
+                  data={props.yeah}
+                  date="5th March"
+                />
               </Paper>
             </Grid>
             <Grid item xs={12} md={4} lg={3}>
@@ -214,13 +217,17 @@ export default function Dashboard(props) {
 
             <Grid item xs={12} md={6} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Deposits title={location} data={props.today} date="5th March" />
+                <Deposits
+                  title={location}
+                  data={props.today}
+                  date="5th March"
+                />
               </Paper>
             </Grid>
             {/* Recent Orders */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
-                <Chart title={location} />
+                <Chart title={location} stuff={props.graph} />
               </Paper>
             </Grid>
           </Grid>
