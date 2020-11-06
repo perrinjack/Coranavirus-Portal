@@ -19,8 +19,6 @@ class DataGenerator extends React.Component {
           'structure={"date":"date","newCases":"newCasesByPublishDate"}'
       )
       .then((response) => {
-        console.log(this.props.count);
-        console.log(response.data.data);
         this.setState({
           localData: response.data.data,
         });
@@ -38,7 +36,6 @@ class DataGenerator extends React.Component {
           'structure={"date":"date","newCases":"newCasesByPublishDate"}'
       )
       .then((response) => {
-        console.log(response.data.data);
         this.setState({
           nationalData: response.data.data,
         });
@@ -62,11 +59,8 @@ class DataGenerator extends React.Component {
     return (
       <div>
         <Dashboard
-          today={this.state.localData[0].newCases}
-          yeah={this.state.nationalData[0].newCases}
           localdata={this.state.localData}
           nationaldata={this.state.nationalData}
-          heading={this.props.count}
         />
       </div>
     );
@@ -79,4 +73,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(DataGenerator );
+export default connect(mapStateToProps)(DataGenerator);

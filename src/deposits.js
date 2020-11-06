@@ -4,10 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Title from './Title';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
-
 const useStyles = makeStyles({
   depositContext: {
     flex: 1,
@@ -23,14 +19,17 @@ export default function Deposits(props) {
         {props.data}
       </Typography>
 
-      
       <Typography color="textSecondary" className={classes.depositContext}>
         Updated on {props.date}
       </Typography>
 
       <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          Source: gov.uk
+        <Link
+          color="primary"
+          target="_blank"
+          href="https://coronavirus.data.gov.uk/ "
+        >
+          Source: coronavirus.data.gov.uk
         </Link>
       </div>
     </React.Fragment>

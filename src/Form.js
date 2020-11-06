@@ -4,13 +4,7 @@ import locals from './locals.json';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, switchButton } from './actions';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Button,
-  Container,
-  CssBaseline,
-  TextField,
-  Typography,
-} from '@material-ui/core';
+import { Button, Container, CssBaseline, TextField } from '@material-ui/core';
 import Title from './Title';
 import { Link } from 'react-router-dom';
 import { Autocomplete, createFilterOptions } from '@material-ui/lab';
@@ -83,7 +77,6 @@ function Form() {
               Update Figures
             </Button>
           </form>
-          {buttonstate}
         </div>
       </Container>
     </div>
