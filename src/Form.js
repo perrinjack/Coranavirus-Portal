@@ -11,6 +11,7 @@ import {
   TextField,
   Typography,
 } from '@material-ui/core';
+import Title from './Title';
 import { Link } from 'react-router-dom';
 import { Autocomplete, createFilterOptions } from '@material-ui/lab';
 
@@ -41,7 +42,7 @@ function Form() {
   const filterOptions = (options, state) => {
     return defaultFilterOptions(options, state).slice(0, OPTIONS_LIMIT);
   };
-  
+
   const classes = useStyles();
   const [place, setPlace] = React.useState(null);
 
@@ -56,9 +57,7 @@ function Form() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h1" variant="h5">
-            Enter Your Town / City
-          </Typography>
+          <Title>Enter Your Town / City </Title>
           <form className={classes.form}>
             <Autocomplete
               onChange={(event, value) => handleChangeMake(value)}
