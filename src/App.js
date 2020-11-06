@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Test from './text';
+import DataGenerator from './dataGenerator';
 import { Redirect } from 'react-router';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/">
-            <Test />
+            <DataGenerator />
           </Route>
           <Route path="/">
             <Redirect to="/" />

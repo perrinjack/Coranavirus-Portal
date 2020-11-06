@@ -16,27 +16,13 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import { useSelector, useDispatch } from 'react-redux';
-// import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import Deposits from './deposits';
 import Form from './Form';
-// import Orders from './Orders';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const drawerWidth = 240;
 
@@ -45,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   toolbar: {
-    paddingRight: 24, // keep right padding when drawer closed
+    paddingRight: 2, // keep right padding when drawer closed
   },
   toolbarIcon: {
     display: 'flex',
@@ -153,7 +139,7 @@ export default function Dashboard(props) {
               open && classes.menuButtonHidden
             )}
           >
-            {/* <MenuIcon /> */}
+            <MenuIcon />
           </IconButton>
           <Typography
             component="h1"
@@ -241,10 +227,6 @@ export default function Dashboard(props) {
               </Paper>
             </Grid>
           </Grid>
-
-          <Box pt={4}>
-            <Copyright />
-          </Box>
         </Container>
       </main>
     </div>

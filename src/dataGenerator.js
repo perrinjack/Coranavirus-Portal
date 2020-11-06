@@ -1,10 +1,8 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import StickyHeadTable from './Table';
 import Dashboard from './dashboard.js';
-class Test extends React.Component {
+class DataGenerator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -66,8 +64,8 @@ class Test extends React.Component {
         <Dashboard
           today={this.state.localData[0].newCases}
           yeah={this.state.nationalData[0].newCases}
-          localdata = {this.state.localData}
-          nationaldata = {this.state.nationalData}
+          localdata={this.state.localData}
+          nationaldata={this.state.nationalData}
           heading={this.props.count}
         />
       </div>
@@ -81,4 +79,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Test);
+export default connect(mapStateToProps)(DataGenerator );
