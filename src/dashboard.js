@@ -185,7 +185,7 @@ export default function Dashboard(props) {
                 <Deposits
                   title="New cases today"
                   data={props.nationaldata[0].newCases}
-                  date="5th March"
+                  date={props.updatednationalData}
                 />
               </Paper>
             </Grid>
@@ -207,7 +207,7 @@ export default function Dashboard(props) {
                 <Deposits
                   title={location}
                   data={props.localdata[0].newCases}
-                  date="5th March"
+                  date={props.updatedlocalData}
                 />
               </Paper>
             </Grid>

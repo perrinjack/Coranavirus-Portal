@@ -42,7 +42,6 @@ function Form() {
 
   const handleChangeMake = (value) => {
     setPlace(value);
-    console.log(value);
     dispatch(switchButton(value));
   };
 

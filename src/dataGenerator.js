@@ -7,7 +7,9 @@ class DataGenerator extends React.Component {
     super(props);
     this.state = {
       localData: [0],
+      updatedlocalData: '',
       nationalData: [0],
+      updatednationallData: '',
       test: this.props.count,
     };
   }
@@ -19,8 +21,10 @@ class DataGenerator extends React.Component {
           'structure={"date":"date","newCases":"newCasesByPublishDate"}'
       )
       .then((response) => {
+        console.log(response.headers['last-modified']);
         this.setState({
           localData: response.data.data,
+          updatedlocalData: response.headers['last-modified'],
         });
       })
       .catch((error) => {
@@ -38,6 +42,7 @@ class DataGenerator extends React.Component {
       .then((response) => {
         this.setState({
           nationalData: response.data.data,
+          updatednationalData: response.headers['last-modified'],
         });
       })
       .catch((error) => {
@@ -60,7 +65,9 @@ class DataGenerator extends React.Component {
       <div>
         <Dashboard
           localdata={this.state.localData}
+          updatedlocalData={this.state.updatedlocalData}
           nationaldata={this.state.nationalData}
+          updatednationalData={this.state.updatednationalData}
         />
       </div>
     );
