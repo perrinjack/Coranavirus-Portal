@@ -22,7 +22,7 @@ export default function Deposits(props) {
       </Typography>
 
       <Typography color="textSecondary" className={classes.depositContext}>
-        Updated on {props.date}
+        {(props.date) ? `Updated on ${props.date.substring(0, 22).substring(4)}` : null }
       </Typography>
 
       <div>

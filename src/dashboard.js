@@ -117,7 +117,7 @@ export default function Dashboard(props) {
     setOpen(!open);
   };
 
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   const location = useSelector((state) => state.counter);
@@ -210,7 +210,7 @@ export default function Dashboard(props) {
             <Grid item xs={12} md={6} lg={3}>
               <Paper className={fixedHeightPaper}>
                 <Deposits
-                  title={location}
+                  title={`New cases in ${location}`}
                   data={props.localdata[0].newCases}
                   date={props.updatedlocalData}
                 />
@@ -225,7 +225,7 @@ export default function Dashboard(props) {
             {/* National Graph*/}
             <Grid item xs={12} md={8} lg={12}>
               <Paper className={fixedHeightPaper}>
-                <Chart title="UK" data={props.nationaldata} datalength={7} />
+                <Chart title="the UK" data={props.nationaldata} datalength={7} />
               </Paper>
             </Grid>
           </Grid>

@@ -18,7 +18,7 @@ import Title from './Title';
 export default function Chart(props) {
   const theme = useTheme();
 
-  const [barGraph, setbarGraph] = React.useState(true);
+  const [barGraph, setbarGraph] = React.useState(false);
 
   const toggleMonthly = (event) => {
     event.preventDefault();
