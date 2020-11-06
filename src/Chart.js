@@ -7,16 +7,14 @@ import {
   YAxis,
   Label,
   ResponsiveContainer,
-  Legend,
   BarChart,
-  Tooltip,
   Bar,
 } from 'recharts';
 import IconButton from '@material-ui/core/IconButton';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
+import ShowChartIcon from '@material-ui/icons/ShowChart';
 import Title from './Title';
-import Link from '@material-ui/core/Link';
-import Button from '@material-ui/core/Button';
+
 export default function Chart(props) {
   const theme = useTheme();
 
@@ -38,7 +36,7 @@ export default function Chart(props) {
       <Title>
         The last week in {props.title}{' '}
         <IconButton onClick={toggleMonthly} style={closeImg}>
-          <EqualizerIcon />
+          {barGraph ? <ShowChartIcon /> : <EqualizerIcon />}
         </IconButton>
       </Title>
 
@@ -56,9 +54,20 @@ export default function Chart(props) {
             }}
           >
             <XAxis dataKey="date" />
-            <YAxis />
+            <YAxis>
+              <Label
+                angle={270}
+                position="left"
+                style={{
+                  textAnchor: 'middle',
+                  fill: theme.palette.text.primary,
+                }}
+              >
+                New Cases
+              </Label>
+            </YAxis>
 
-            <Bar dataKey="newCases" fill="#8884d8" label/>
+            <Bar dataKey="newCases" fill="#8884d8" label />
           </BarChart>
         ) : (
           <LineChart
