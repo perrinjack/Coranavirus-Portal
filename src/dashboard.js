@@ -176,6 +176,8 @@ export default function Dashboard(props) {
       </Drawer>
       <main className={classes.content} style={{ backgroundColor: '#f5f5f5' }}>
         <div className={classes.appBarSpacer} />
+
+        {props.localdata && 
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
             {/* Data displayed */}
@@ -229,7 +231,7 @@ export default function Dashboard(props) {
               </Paper>
             </Grid>
           </Grid>
-        </Container>
+        </Container>}
       </main>
     </div>
   );

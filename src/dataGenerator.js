@@ -6,9 +6,9 @@ class DataGenerator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      localData: [0],
+      localData: null,
       updatedlocalData: '',
-      nationalData: [0],
+      nationalData: null,
       updatednationallData: '',
       test: this.props.count,
     };
