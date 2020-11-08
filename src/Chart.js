@@ -9,10 +9,12 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
+  Tooltip,
 } from 'recharts';
 import IconButton from '@material-ui/core/IconButton';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import ShowChartIcon from '@material-ui/icons/ShowChart';
+import TimelapseIcon from '@material-ui/icons/Timelapse';
 import Title from './Title';
 
 export default function Chart(props) {
@@ -20,48 +22,17 @@ export default function Chart(props) {
 
   const [barGraph, setbarGraph] = React.useState(false);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+  const [dataLengthWeekly, setdataLengthWeekly] = React.useState(7);
 
   const toggleMonthly = (event) => {
     event.preventDefault();
     setbarGraph(!barGraph);
-    
   };
 
-
+  const toggleLength = (event) => {
+    event.preventDefault();
+    dataLengthWeekly === 7 ? setdataLengthWeekly(30) : setdataLengthWeekly(7);
+  };
 
   let closeImg = {
     cursor: 'pointer',
@@ -72,9 +43,12 @@ export default function Chart(props) {
   return (
     <React.Fragment>
       <Title>
-        The last week in {props.title}{' '}
+        The last {dataLengthWeekly === 7 ? 'week' : 'month'} in {props.title}{' '}
         <IconButton onClick={toggleMonthly} style={closeImg}>
           {barGraph ? <ShowChartIcon /> : <EqualizerIcon />}
+        </IconButton>
+        <IconButton onClick={toggleLength} style={closeImg}>
+          <TimelapseIcon />{' '}
         </IconButton>
       </Title>
 
@@ -83,7 +57,7 @@ export default function Chart(props) {
           <BarChart
             width={500}
             height={300}
-            data={props.data.slice(0, props.datalength).reverse()}
+            data={props.data.slice(0, dataLengthWeekly).reverse()}
             margin={{
               top: 5,
               right: 30,
@@ -104,12 +78,12 @@ export default function Chart(props) {
                 New Cases
               </Label>
             </YAxis>
-
-            <Bar dataKey="newCases" fill="#8884d8" label />
+            <Tooltip />
+            <Bar dataKey="newCases" fill="#8884d8" />
           </BarChart>
         ) : (
           <LineChart
-            data={props.data.slice(0, props.datalength).reverse()}
+            data={props.data.slice(0, dataLengthWeekly).reverse()}
             margin={{
               top: 16,
               right: 16,
@@ -130,6 +104,7 @@ export default function Chart(props) {
                 New Cases
               </Label>
             </YAxis>
+            <Tooltip />
             <Line
               type="monotone"
               dataKey="newCases"

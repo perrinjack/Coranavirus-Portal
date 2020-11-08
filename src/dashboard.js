@@ -167,6 +167,7 @@ export default function Dashboard(props) {
         <div className={classes.toolbarIcon}>
           <IconButton onClick={toggleDrawer}>
             <ChevronLeftIcon />
+           
           </IconButton>
         </div>
         <Divider />
@@ -177,61 +178,63 @@ export default function Dashboard(props) {
       <main className={classes.content} style={{ backgroundColor: '#f5f5f5' }}>
         <div className={classes.appBarSpacer} />
 
-        {props.localdata && 
-        <Container maxWidth="lg" className={classes.container}>
-          <Grid container spacing={3}>
-            {/* Data displayed */}
+        {props.localdata && props.nationaldata && (
+          <Container maxWidth="lg" className={classes.container}>
+            <Grid container spacing={3}>
+              {/* Data displayed */}
 
-            {/* New Cases*/}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits
-                  title="New cases today"
-                  data={props.nationaldata[0].newCases}
-                  date={props.updatednationalData}
-                />
-              </Paper>
+              {/* New Cases*/}
+              <Grid item xs={12} md={4} lg={3}>
+                <Paper className={fixedHeightPaper}>
+                  <Deposits
+                    title={`New cases today in ${props.option}`}
+                    data={props.nationaldata[0].newCases}
+                    date={props.updatednationalData}
+                  />
+                </Paper>
+              </Grid>
+              {/* Deaths*/}
+              <Grid item xs={12} md={4} lg={3}>
+                <Paper className={fixedHeightPaper}>
+                  <Deposits
+                    title={`Deaths today in ${props.option}`}
+                    data={props.nationaldata[0].deaths}
+                    date={props.updatednationalData}
+                    option={props.option}
+                  />
+                </Paper>
+              </Grid>
+              {/* Local Form Entry*/}
+              <Grid item xs={12} md={6} lg={6}>
+                <Paper className={fixedHeightPaper}>
+                  <Form />
+                </Paper>
+              </Grid>
+              {/* Local daily figures*/}
+              <Grid item xs={12} md={6} lg={3}>
+                <Paper className={fixedHeightPaper}>
+                  <Deposits
+                    title={`New cases in ${location}`}
+                    data={props.localdata[0].newCases}
+                    date={props.updatedlocalData}
+                  />
+                </Paper>
+              </Grid>
+              {/* Local Graph*/}
+              <Grid item xs={12} md={8} lg={9}>
+                <Paper className={fixedHeightPaper}>
+                  <Chart title={location} data={props.localdata} />
+                </Paper>
+              </Grid>
+              {/* National Graph*/}
+              <Grid item xs={12} md={8} lg={12}>
+                <Paper className={fixedHeightPaper}>
+                  <Chart title={props.option} data={props.nationaldata} />
+                </Paper>
+              </Grid>
             </Grid>
-            {/* Deaths*/}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits
-                  title="Deaths today"
-                  data={props.nationaldata[0].deaths}
-                  date={props.updatednationalData}
-                />
-              </Paper>
-            </Grid>
-            {/* Local Form Entry*/}
-            <Grid item xs={12} md={6} lg={6}>
-              <Paper className={fixedHeightPaper}>
-                <Form />
-              </Paper>
-            </Grid>
-            {/* Local daily figures*/}
-            <Grid item xs={12} md={6} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <Deposits
-                  title={`New cases in ${location}`}
-                  data={props.localdata[0].newCases}
-                  date={props.updatedlocalData}
-                />
-              </Paper>
-            </Grid>
-            {/* Local Graph*/}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-                <Chart title={location} data={props.localdata} datalength={7} />
-              </Paper>
-            </Grid>
-            {/* National Graph*/}
-            <Grid item xs={12} md={8} lg={12}>
-              <Paper className={fixedHeightPaper}>
-                <Chart title="the UK" data={props.nationaldata} datalength={7} />
-              </Paper>
-            </Grid>
-          </Grid>
-        </Container>}
+          </Container>
+        )}
       </main>
     </div>
   );
