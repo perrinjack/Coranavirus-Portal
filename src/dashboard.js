@@ -186,9 +186,10 @@ export default function Dashboard(props) {
               <Grid item xs={12} md={4} lg={3}>
                 <Paper className={fixedHeightPaper}>
                   <Deposits
-                    title="New cases today"
+                    title={`New cases today in ${props.option}`}
                     data={props.nationaldata[0].newCases}
                     date={props.updatednationalData}
+                    
                   />
                 </Paper>
               </Grid>
@@ -196,9 +197,10 @@ export default function Dashboard(props) {
               <Grid item xs={12} md={4} lg={3}>
                 <Paper className={fixedHeightPaper}>
                   <Deposits
-                    title="Deaths today"
+                    title={`Deaths today in ${props.option}`}
                     data={props.nationaldata[0].deaths}
                     date={props.updatednationalData}
+                    option={props.option}
                   />
                 </Paper>
               </Grid>
@@ -227,7 +229,7 @@ export default function Dashboard(props) {
               {/* National Graph*/}
               <Grid item xs={12} md={8} lg={12}>
                 <Paper className={fixedHeightPaper}>
-                  <Chart title="the UK" data={props.nationaldata} />
+                  <Chart title={props.option} data={props.nationaldata} />
                 </Paper>
               </Grid>
             </Grid>
