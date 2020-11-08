@@ -20,10 +20,48 @@ export default function Chart(props) {
 
   const [barGraph, setbarGraph] = React.useState(false);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
   const toggleMonthly = (event) => {
     event.preventDefault();
     setbarGraph(!barGraph);
+    
   };
+
+
 
   let closeImg = {
     cursor: 'pointer',

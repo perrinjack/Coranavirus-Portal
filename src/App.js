@@ -8,7 +8,11 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/">
+          <Route key={'main'} exact path="/">
+            <DataGenerator />
+          </Route>
+
+          <Route key={'england'} exact path="/england">
             <DataGenerator />
           </Route>
           <Route path="/">
