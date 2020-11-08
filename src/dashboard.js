@@ -167,6 +167,7 @@ export default function Dashboard(props) {
         <div className={classes.toolbarIcon}>
           <IconButton onClick={toggleDrawer}>
             <ChevronLeftIcon />
+           
           </IconButton>
         </div>
         <Divider />
@@ -189,7 +190,6 @@ export default function Dashboard(props) {
                     title={`New cases today in ${props.option}`}
                     data={props.nationaldata[0].newCases}
                     date={props.updatednationalData}
-                    
                   />
                 </Paper>
               </Grid>
