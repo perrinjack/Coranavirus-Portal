@@ -204,13 +204,14 @@ export default function Dashboard(props) {
                   />
                 </Paper>
               </Grid>
-              {/* Local Form Entry*/}
+
+              {props.local && (
+              <>
               <Grid item xs={12} md={6} lg={6}>
                 <Paper className={fixedHeightPaper}>
                   <Form />
                 </Paper>
               </Grid>
-              {/* Local daily figures*/}
               <Grid item xs={12} md={6} lg={3}>
                 <Paper className={fixedHeightPaper}>
                   <Deposits
@@ -220,12 +221,13 @@ export default function Dashboard(props) {
                   />
                 </Paper>
               </Grid>
-              {/* Local Graph*/}
               <Grid item xs={12} md={8} lg={9}>
                 <Paper className={fixedHeightPaper}>
                   <Chart title={location} data={props.localdata} />
                 </Paper>
-              </Grid>
+              </Grid> 
+              </>
+              )}
               {/* National Graph*/}
               <Grid item xs={12} md={8} lg={12}>
                 <Paper className={fixedHeightPaper}>

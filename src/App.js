@@ -10,7 +10,7 @@ function App() {
       <div>
         <Switch>
           <Route key={'main'} exact path="/">
-            <DataGenerator areaType="overview" areaName="&" option={'the UK'} />
+            <DataGenerator areaType="overview" areaName="&" option={'the UK'} local = {true}/>
           </Route>
 
           {countries.map((country) => (
@@ -19,6 +19,7 @@ function App() {
                 areaType="nation"
                 areaName={`;areaName=${country}&`}
                 option={country}
+                local = {false}
               />
             </Route>
           ))}

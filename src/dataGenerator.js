@@ -69,6 +69,7 @@ class DataGenerator extends React.Component {
           nationaldata={this.state.nationalData}
           updatednationalData={this.state.updatednationalData}
           option={this.props.option}
+          local = {this.props.local}
         />
       </div>
     );
