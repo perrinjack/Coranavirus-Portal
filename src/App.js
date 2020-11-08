@@ -9,11 +9,11 @@ function App() {
       <div>
         <Switch>
           <Route key={'main'} exact path="/">
-            <DataGenerator />
+            <DataGenerator areaType="overview" areaName="&" />
           </Route>
 
           <Route key={'england'} exact path="/england">
-            <DataGenerator />
+            <DataGenerator areaType="nation" areaName=";areaName=England&" />
           </Route>
           <Route path="/">
             <Redirect to="/" />

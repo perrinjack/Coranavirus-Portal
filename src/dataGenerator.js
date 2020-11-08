@@ -10,7 +10,6 @@ class DataGenerator extends React.Component {
       updatedlocalData: '',
       nationalData: null,
       updatednationallData: '',
-      test: this.props.count,
     };
   }
   localData() {
@@ -36,7 +35,7 @@ class DataGenerator extends React.Component {
     axios
       .get(
         'https://api.coronavirus.data.gov.uk/v1/data?' +
-          `filters=areaType=overview&` +
+          `filters=areaType=${this.props.areaType}${this.props.areaName}` +
           'structure={"date":"date","newCases":"newCasesByPublishDate", "deaths":"newDeaths28DaysByPublishDate"}'
       )
       .then((response) => {
