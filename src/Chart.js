@@ -43,7 +43,7 @@ export default function Chart(props) {
   return (
     <React.Fragment>
       <Title>
-        The last week in {props.title}{' '}
+        The last {dataLengthWeekly === 7 ? 'week' : 'month'} in {props.title}{' '}
         <IconButton onClick={toggleMonthly} style={closeImg}>
           {barGraph ? <ShowChartIcon /> : <EqualizerIcon />}
         </IconButton>
