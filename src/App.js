@@ -19,6 +19,20 @@ function App() {
               option={'England'}
             />
           </Route>
+          <Route key={'scotland'} exact path="/scotland">
+            <DataGenerator
+              areaType="nation"
+              areaName=";areaName=Scotland&"
+              option={'Scotland'}
+            />
+          </Route>
+          <Route key={'wales'} exact path="/wales">
+            <DataGenerator
+              areaType="nation"
+              areaName=";areaName=Wales&"
+              option={'Wales'}
+            />
+          </Route>
           <Route path="/">
             <Redirect to="/" />
           </Route>

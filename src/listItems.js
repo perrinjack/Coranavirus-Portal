@@ -21,13 +21,13 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="England" />
       </ListItem>
-      <ListItem button component={Link} to="/england">
+      <ListItem button component={Link} to="/scotland">
       <ListItemIcon>
         <Flag country="GB-SCT" />
       </ListItemIcon>
       <ListItemText primary="Scotland" />
     </ListItem>
-    <ListItem button component={Link} to="/england">
+    <ListItem button component={Link} to="/wales">
       <ListItemIcon>
         <Flag country="GB-WLS" />
       </ListItemIcon>
