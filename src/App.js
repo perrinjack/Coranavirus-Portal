@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DataGenerator from './dataGenerator';
 import { Redirect } from 'react-router';
 
+const countries = ['England', 'Scotland', 'Wales']; 
 function App() {
   return (
     <Router>
@@ -12,27 +13,16 @@ function App() {
             <DataGenerator areaType="overview" areaName="&" option={'the UK'} />
           </Route>
 
-          <Route key={'england'} exact path="/england">
-            <DataGenerator
-              areaType="nation"
-              areaName=";areaName=England&"
-              option={'England'}
-            />
-          </Route>
-          <Route key={'scotland'} exact path="/scotland">
-            <DataGenerator
-              areaType="nation"
-              areaName=";areaName=Scotland&"
-              option={'Scotland'}
-            />
-          </Route>
-          <Route key={'wales'} exact path="/wales">
-            <DataGenerator
-              areaType="nation"
-              areaName=";areaName=Wales&"
-              option={'Wales'}
-            />
-          </Route>
+          {countries.map((country) => (
+            <Route key={country} exact path={`/${country}`}>
+              <DataGenerator
+                areaType="nation"
+                areaName={`;areaName=${country}&`}
+                option={country}
+              />
+            </Route>
+          ))}
+
           <Route path="/">
             <Redirect to="/" />
           </Route>
