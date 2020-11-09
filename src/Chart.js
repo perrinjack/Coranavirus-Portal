@@ -16,7 +16,8 @@ import EqualizerIcon from '@material-ui/icons/Equalizer';
 import ShowChartIcon from '@material-ui/icons/ShowChart';
 import TimelapseIcon from '@material-ui/icons/Timelapse';
 import Title from './Title';
-
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 export default function Chart(props) {
   const theme = useTheme();
 
@@ -35,21 +36,25 @@ export default function Chart(props) {
   };
 
   let closeImg = {
-    cursor: 'pointer',
     float: 'right',
-    marginTop: '5px',
-    marginRight: '25px',
   };
   return (
     <React.Fragment>
       <Title>
         The last {dataLengthWeekly === 7 ? 'week' : 'month'} in {props.title}{' '}
-        <IconButton onClick={toggleMonthly} style={closeImg}>
-          {barGraph ? <ShowChartIcon /> : <EqualizerIcon />}
-        </IconButton>
-        <IconButton onClick={toggleLength} style={closeImg}>
-          <TimelapseIcon />{' '}
-        </IconButton>
+        <ButtonGroup
+          variant="text"
+          color="primary"
+          aria-label="text primary button group"
+          style={closeImg}
+        >
+          <IconButton onClick={toggleMonthly} style={closeImg}>
+            {barGraph ? <ShowChartIcon /> : <EqualizerIcon />}
+          </IconButton>
+          <IconButton onClick={toggleLength} style={closeImg}>
+            <TimelapseIcon />{' '}
+          </IconButton>
+        </ButtonGroup>
       </Title>
 
       <ResponsiveContainer>
