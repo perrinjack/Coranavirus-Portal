@@ -33,12 +33,12 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Wales" />
       </ListItem>
-      <ListItem button component={Link} to="/england">
+      {/* <ListItem button component={Link} to="/england">
       <ListItemIcon>
         <Flag country="GB-NIR" />
       </ListItemIcon>
       <ListItemText primary="Northern Ireland" />
-      </ListItem>
+      </ListItem> */}
   </div>
 );
 
