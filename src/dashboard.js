@@ -167,7 +167,6 @@ export default function Dashboard(props) {
         <div className={classes.toolbarIcon}>
           <IconButton onClick={toggleDrawer}>
             <ChevronLeftIcon />
-           
           </IconButton>
         </div>
         <Divider />
@@ -204,28 +203,42 @@ export default function Dashboard(props) {
                   />
                 </Paper>
               </Grid>
-              {/* Local Form Entry*/}
-              <Grid item xs={12} md={6} lg={6}>
-                <Paper className={fixedHeightPaper}>
-                  <Form />
-                </Paper>
-              </Grid>
-              {/* Local daily figures*/}
-              <Grid item xs={12} md={6} lg={3}>
-                <Paper className={fixedHeightPaper}>
-                  <Deposits
-                    title={`New cases in ${location}`}
-                    data={props.localdata[0].newCases}
-                    date={props.updatedlocalData}
-                  />
-                </Paper>
-              </Grid>
-              {/* Local Graph*/}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper className={fixedHeightPaper}>
-                  <Chart title={location} data={props.localdata} />
-                </Paper>
-              </Grid>
+
+              {!props.local && (
+                <Grid item xs={12} md={6} lg={3}>
+                  <Paper className={fixedHeightPaper}>
+                    <Deposits
+                      title={`COVID-19 occupied beds with mechanical ventilators in ${props.option}`}
+                      data={props.nationaldata[2].covidOccupiedMVBeds}
+                      date={null}
+                    />
+                  </Paper>
+                </Grid>
+              )}
+
+              {props.local && (
+                <>
+                  <Grid item xs={12} md={6} lg={6}>
+                    <Paper className={fixedHeightPaper}>
+                      <Form />
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} md={6} lg={3}>
+                    <Paper className={fixedHeightPaper}>
+                      <Deposits
+                        title={`New cases in ${location}`}
+                        data={props.localdata[0].newCases}
+                        date={props.updatedlocalData}
+                      />
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} md={8} lg={9}>
+                    <Paper className={fixedHeightPaper}>
+                      <Chart title={location} data={props.localdata} />
+                    </Paper>
+                  </Grid>
+                </>
+              )}
               {/* National Graph*/}
               <Grid item xs={12} md={8} lg={12}>
                 <Paper className={fixedHeightPaper}>

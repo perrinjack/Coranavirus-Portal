@@ -36,9 +36,10 @@ class DataGenerator extends React.Component {
       .get(
         'https://api.coronavirus.data.gov.uk/v1/data?' +
           `filters=areaType=${this.props.areaType}${this.props.areaName}` +
-          'structure={"date":"date","newCases":"newCasesByPublishDate", "deaths":"newDeaths28DaysByPublishDate"}'
+          'structure={"date":"date","newCases":"newCasesByPublishDate", "deaths":"newDeaths28DaysByPublishDate", "covidOccupiedMVBeds":"covidOccupiedMVBeds"}'
       )
       .then((response) => {
+        console.log(response.data.data);
         this.setState({
           nationalData: response.data.data,
           updatednationalData: response.headers['last-modified'],
@@ -69,6 +70,7 @@ class DataGenerator extends React.Component {
           nationaldata={this.state.nationalData}
           updatednationalData={this.state.updatednationalData}
           option={this.props.option}
+          local={this.props.local}
         />
       </div>
     );
